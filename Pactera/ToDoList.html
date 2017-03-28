@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>待办任务列表</title>
+    <link href="/Scripts/jquery-easyui-1.4.1/themes/default/easyui-pactera.css" rel="stylesheet" />
+    <link href="/Scripts/jquery-easyui-1.4.1/themes/icon.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-easyui-1.4.1/jquery.min.js" charset="utf-8"></script>
+    <script src="/Scripts/jquery-easyui-1.4.1/jquery.easyui.min.js" charset="utf-8"></script>
+    <script src="/Scripts/jquery-easyui-1.4.1/locale/easyui-lang-zh_CN.js" charset="utf-8"></script>
+    <link href="/Scripts/jquery-easyui-1.4.1/themes/diy_style.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function OpenApproveWindow(filename, tasktype, step_id, instance_id) {
+            var url = '/FlowApprove/' + filename + 'FlowApprove.aspx?tasktype=' + tasktype + '&step_id=' + step_id + '&instance_id=' + instance_id;
+            var title = '';
+            switch (filename) {
+                case "CashDeposit":
+                    title = '投标保证金审批';
+                    break;
+                case "Enroll":
+                    title = '投标报名审批';
+                    break;
+                case "Entrust":
+                    title = '法人委托审批';
+                    break;
+                case "Owner":
+                    title = '业主信息审批';
+                    break;
+                case "ProjectChance":
+                    title = '市场信息审批';
+                    break;
+                case "TenderEvaluation":
+                    title = '封标审批';
+                    break;
+                case "TenderOpening":
+                    title = '开标结果审批';
+                    break;
+                case "OtherSeal":
+                    title = '其他市场相关用印审批';
+                    break;
+                default:
+                    break;
+            }
+            title += tasktype == '0' ? '流程处理' : '流程查看';
+            parent.createAndOpenModalWindow(title, '1020', '500', url, function (data) {
+                if (data == '1') {
+                    switch (tasktype) {
+                        case "0":
+                            $('#dgDo').datagrid('reload');
+                            break;
+                        case "1":
+                            $('#dgDone').datagrid('reload');
+                            break;
+                        case "2":
+                            $('#dghis').datagrid('reload');
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            });
+        }
+        $(function () {
+            $('#dgDo').datagrid({
+                url: '/Handler/PublicTaskFlow.ashx?action=task&tasktype=0',
+                height: 315,
+                pagination: true,
+                singleSelect: true,
+                rownumbers: true,
+                columns: [[{
+                    field: 'Title',
+                    title: '流程标题',
+                    halign: 'center',
+                    width: '400',
+                    formatter: function (value, row, index) {
+                        return '<span title=' + value + '>' + value + '</span>';
+                    }
+                }, {
+                    field: 'UserName',
+                    title: '申请人',
+                    align: 'center',
+                    halign: 'center',
+                    width: '150'
+                }, {
+                    field: 'sdate',
+                    title: '接收时间',
+                    align: 'center',
+                    halign: 'center',
+                    width: '150'
+                }, {
+                    field: 'FormId',
+                    title: '操作',
+                    align: 'center',
+                    halign: 'center',
+                    width: '150',
+                    formatter: function (value, row, index) {
+                        var formName = row.FormName.split('_');//处理数据库表名变为url
+                        var query = "'" + formName[formName.length - 1] + "','0','" + row.StepId + "','" + row.InstanceId + "'";
+                        var btn = '<a class="editcls" onclick="OpenApproveWindow(' + query + ')" >审批</a>';
+                        return btn;
+                    }
+                }]],
+                onLoadSuccess: function (data) {
+                    $('.editcls').linkbutton({ text: '审批', height: 24, plain: true, iconCls: 'icon-edit' });
+                },
+                onClickRow: function (rowIndex, rowData) {
+                    $(this).datagrid('unselectRow', rowIndex);
+                },
+                onDblClickRow: function (rowIndex, rowData) {
+                    var formName = rowData.FormName.split('_');//处理数据库表名变为url
+                    OpenApproveWindow(formName[formName.length - 1], '0', rowData.StepId, rowData.InstanceId);
+                }
+            });
+            var pager1 = $('#dgDo').datagrid().datagrid('getPager');	// get the pager of datagrid
+            pager1.pagination({
+                buttons: [{
+                    id: 'dataPagerButtonSpace1'
+                }]
+            });
+            $('#dgDone').datagrid({
+                url: '/Handler/PublicTaskFlow.ashx?action=task&tasktype=1',
+                height: 315,
+                pagination: true,
+                singleSelect: true,
+                rownumbers: true,
+                columns: [[{
+                    field: 'Title',
+                    title: '流程标题',
+                    halign: 'center',
+                    width: '400',
+                    formatter: function (value, row, index) {
+                        return '<span title=' + value + '>' + value + '</span>';
+                    }
+                }, {
+                    field: 'UserName',
+                    title: '申请人',
+                    align: 'center',
+                    halign: 'center',
+                    width: '150'
+                }, {
+                    field: 'sdate',
+                    title: '接收时间',
+                    align: 'center',
+                    halign: 'center',
+                    width: '150'
+                }, {
+                    field: 'edate',
+                    title: '操作时间',
+                    align: 'center',
+                    halign: 'center',
+                    width: '150'
+                }, {
+                    field: 'FormId',
+                    title: '操作',
+                    align: 'center',
+                    halign: 'center',
+                    width: '150',
+                    formatter: function (value, row, index) {
+                        var formName = row.FormName.split('_');//处理数据库表名变为url
+                        var query = "'" + formName[formName.length - 1] + "','1','" + row.StepId + "','" + row.InstanceId + "'";
+                        var btn = '<a class="infocls" onclick="OpenApproveWindow(' + query + ')" >查看</a>';
+                        return btn;
+                    }
+                }]],
+                onLoadSuccess: function (data) {
+                    $('.infocls').linkbutton({ text: '查看', height: 24, plain: true, iconCls: 'icon-info' });
+                },
+                onClickRow: function (rowIndex, rowData) {
+                    $(this).datagrid('unselectRow', rowIndex);
+                },
+                onDblClickRow: function (rowIndex, rowData) {
+                    var formName = rowData.FormName.split('_');//处理数据库表名变为url
+                    var url = '/FlowApprove/' + formName[formName.length - 1] + 'FlowApprove.aspx?tasktype=1&step_id=' + rowData.StepId + '&instance_id=' + rowData.InstanceId;
+                    OpenApproveWindow(formName[formName.length - 1], '1', rowData.StepId, rowData.InstanceId);
+                }
+            });
+            var pager2 = $('#dgDone').datagrid().datagrid('getPager');	// get the pager of datagrid
+            pager2.pagination({
+                buttons: [{
+                    id: 'dataPagerButtonSpace2'
+                }]
+            });
+            $('#dghis').datagrid({
+                url: '/Handler/PublicTaskFlow.ashx?action=task&tasktype=2',//新增历史记录，类型为2
+                height: 315,
+                pagination: true,
+                singleSelect: true,
+                rownumbers: true,
+                columns: [[{
+                    field: 'Title',
+                    title: '流程标题',
+                    halign: 'center',
+                    width: '400',
+                    formatter: function (value, row, index) {
+                        return '<span title=' + value + '>' + value + '</span>';
+                    }
+                }, {
+                    field: 'UserName',
+                    title: '申请人',
+                    align: 'center',
+                    halign: 'center',
+                    width: '150'
+                }, {
+                    field: 'sdate',
+                    title: '开始时间',
+                    align: 'center',
+                    halign: 'center',
+                    width: '150'
+                }, {
+                    field: 'edate',
+                    title: '结束时间',
+                    align: 'center',
+                    halign: 'center',
+                    width: '150'
+                }, {
+                    field: 'FormId',
+                    title: '操作',
+                    align: 'center',
+                    halign: 'center',
+                    width: '150',
+                    formatter: function (value, row, index) {
+                        var formName = row.FormName.split('_');//处理数据库表名变为url
+                        var query = "'" + formName[formName.length - 1] + "','2','" + row.StepId + "','" + row.InstanceId + "'";
+                        var btn = '<a class="infocls" onclick="OpenApproveWindow(' + query + ')" >查看</a>';
+                        return btn;
+                    }
+                }]],
+                onLoadSuccess: function (data) {
+                    $('.infocls').linkbutton({ text: '查看', height: 24, plain: true, iconCls: 'icon-info' });
+                },
+                onClickRow: function (rowIndex, rowData) {
+                    $(this).datagrid('unselectRow', rowIndex);
+                },
+                onDblClickRow: function (rowIndex, rowData) {
+                    var formName = rowData.FormName.split('_');//处理数据库表名变为url
+                    OpenApproveWindow(formName[formName.length - 1], '2', rowData.StepId, rowData.InstanceId);
+                }
+            });
+            var pager2 = $('#dghis').datagrid().datagrid('getPager');	// get the pager of datagrid
+            pager2.pagination({
+                buttons: [{
+                    id: 'dataPagerButtonSpace3'
+                }]
+            });
+            $("#tableIndex").tabs({
+                onSelect: function (title, index) {
+                    if (title == '待办流程') {
+                        $('#dgDo').datagrid('load');
+                    }
+                    if (title == '已办流程') {
+                        $('#dgDone').datagrid('load');
+                    }
+                    if (title == '结束流程') {
+                        $('#dghis').datagrid('load');
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body class="easyui-layout" style="padding: 5px 0px 0px 0px">
+    <div id="tableIndex" class="easyui-tabs" data-options="tabHeight:30" plain="true">
+        <div title="待办流程" data-options="closable:false" style="background-color: #F7F9F8; padding-top: 10px;">
+            <table id="dgDo"></table>
+        </div>
+        <div title="已办流程" data-options="closable:false" style="background-color: #F7F9F8; padding-top: 10px;">
+            <table id="dgDone"></table>
+        </div>
+        <div title="结束流程" data-options="closable:false" style="background-color: #F7F9F8; padding-top: 10px;">
+            <table id="dghis"></table>
+        </div>
+    </div>
+</body>
+</html>

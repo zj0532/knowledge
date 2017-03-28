@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow FlowCode="TenderOpening" Status="0" Name="开标结果" Description="开标结果审批流程" Version="">
+
+    <!-- 开始 -->
+    <Step StepNumber="1" Description="发起" ParentNumber="0">
+        <Action ActionType="Start" />
+    </Step>
+
+    <!-- 审批 - 分公司市场部经理 -->
+    <Step StepNumber="2" Description="分公司市场部经理" ParentNumber="1">
+        <Action ActionType="Approve">
+            <Approve PersonType="Role">3</Approve>
+        </Action>
+    </Step>
+    <Step StepNumber="3" Description="审批通过" ParentNumber="2">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">1</Condition>
+        </Action>
+    </Step>
+    <Step StepNumber="4" Description="审批不通过" ParentNumber="2">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">0</Condition>
+        </Action>
+    </Step>
+    <!--子集团市场部-->
+    <Step StepNumber="5" Description="子集团市场部" ParentNumber="3">
+        <Action ActionType="Approve">
+            <Approve PersonType="Role">10</Approve>
+        </Action>
+    </Step>
+    <Step StepNumber="6" Description="审批通过" ParentNumber="5">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">1</Condition>
+        </Action>
+    </Step>
+    <Step StepNumber="7" Description="审批不通过" ParentNumber="5">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">0</Condition>
+        </Action>
+    </Step>
+    <!--区域管理结构领导-->
+    <Step StepNumber="8" AutoSkip="True" Description="区域管理结构领导" ParentNumber="6">
+        <Action ActionType="Approve">
+            <Approve PersonType="Role">16</Approve>
+        </Action>
+    </Step>
+    <Step StepNumber="9" Description="审批通过" ParentNumber="8">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">1</Condition>
+        </Action>
+    </Step>
+    <Step StepNumber="10" Description="审批不通过" ParentNumber="8">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">0</Condition>
+        </Action>
+    </Step>
+    <!-- 审批 - 集团市场部 -->
+    <Step StepNumber="11" Description="集团市场部" ParentNumber="9">
+        <Action ActionType="Approve">
+            <Approve PersonType="Role">13</Approve>
+        </Action>
+    </Step>
+    <Step StepNumber="12" Description="审批通过" ParentNumber="11">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">1</Condition>
+        </Action>
+    </Step>
+    <Step StepNumber="13" Description="审批不通过" ParentNumber="11">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">0</Condition>
+        </Action>
+    </Step>
+
+    <!-- 结束 -->
+    <Step StepNumber="14" Description="结束" ParentNumber="12">
+        <Action ActionType="End" />
+    </Step>
+
+</Workflow>

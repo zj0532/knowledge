@@ -1,0 +1,159 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    font-size: 12px;
+    font-family: 'Microsoft YaHei';
+}
+
+.index-header-wrap {
+    height: 104px;
+}
+
+.index-header .header-banner {
+    height: 63px;
+    position: relative;
+    background-image: url(../pactera/images/index_02.png);
+}
+
+/*头部 右侧按钮区域*/
+.index-header .header-top-right-btns {
+    top: 18px;
+    right: 10px;
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
+    color:#ffffff;
+}
+
+.index-header .header-top-right-btns .button-message {
+    margin: 0px 5px 0px 0px;
+    padding: 0px;
+    height: 28px;
+    width: 28px;
+    cursor: pointer;
+    cursor: hand;
+    float: left;
+    position:relative;
+    background-image: url(../pactera/images/banner_top_right_button_05.png);
+}
+
+.index-header .header-top-right-btns .button-message .message-count {
+    top: -3px;
+    right: -3px;
+    font-size: 9px;
+    padding: 0px 2px 0px 2px;
+    position: absolute;
+    background-color: #ff0000;
+    border: none;
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
+}
+
+.index-header .header-top-right-btns .button-user {
+    margin: 0px;
+    padding: 0px;
+    height: 28px;
+    width: 28px;
+    float:left;
+    background-image: url(../pactera/images/banner_top_right_button_07.png);
+}
+
+.index-header .header-top-right-btns .button-text {
+    margin: 0px;
+    padding: 0px;
+    height: 28px;
+    float: left;
+    line-height: 28px;
+    padding: 0px 5px 0px 5px;
+}
+
+.index-header .header-top-right-btns .button-exit {
+    margin: 0px;
+    padding: 0px;
+    height: 28px;
+    width: 28px;
+    cursor: pointer;
+    cursor: hand;
+    float:left;
+    background-image: url(../pactera/images/banner_top_right_button_09.png);
+}
+
+.index-header .header-menu {
+    height: 41px;
+    position: relative;
+    padding:0px;
+    margin:0px;
+    background-image: url(../pactera/images/index_menu_bg.png);
+    background-repeat: repeat-x;
+}
+
+.index-header .header-menu .menu-computer {
+    display: block;
+    float:left;
+    width: 51px;
+    height: 41px;
+    margin-right:10px;
+    background-image: url(../pactera/images/index_04.png);
+}
+
+/* 业主菜单 */
+.index-header .header-menu .menu-list-item {
+    position:relative;
+    float:left;
+    z-index: 200;
+    cursor: pointer;
+    width: 140px;
+    height: 41px;
+    font-size:14px;
+    background: url(../pactera/images/index_menu_line.png) no-repeat;
+}
+
+.index-header .header-menu .menu-list-item:hover {
+    /*WCX
+    background: #fff;EEF6F9*/
+    background:#e6f1ff;
+}
+
+/* 菜单下拉 */
+.index-header .header-menu .menu-list-item .drop-menu {
+    display: none;
+    position: absolute;
+    top: 41px;
+    left: 0px;
+    width: 140px;
+    background-color: #EEF6F9;/*C1DBEA*/
+    -webkit-box-shadow: 1px 3px 3px #808080;
+    -moz-box-shadow: 3px 3px 3px #808080;
+    box-shadow: 1px 1px 1px #909090;
+}
+
+.index-header .header-menu .menu-list-item .drop-menu div {
+    width:135px;
+    float: left;
+    /*WCX菜单下拉颜色
+    color: #808080;*/
+    color:#145281;
+    padding-left:5px;
+    line-height: 25px;
+    /*background:url(../pactera/images/index_05.png);*/
+}
+
+.index-header .header-menu .menu-list-item .drop-menu div:hover {
+    float: left;
+    /*WCX菜单下拉颜色
+    color: #808080;*/
+    color:#ffffff;
+    background-color:#86b7ed;
+    line-height: 25px;
+}
+.index-header .header-menu .menu-list-item .drop-menu .item-line {
+    width:135px;
+    float:left;
+    border:none;
+    /*border-bottom: 1px solid #e5e5e5;
+      WCX-二级菜单分割线颜色*/
+    /*border-bottom:dashed 1px #5d9ee5;*/
+    background:url(../pactera/images/co_4.jpg); 
+    height:2px;
+}

@@ -1,0 +1,17 @@
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Model\bin\Release\Pactera.Model.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Model\bin\Release\Pactera.Model.pdb
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Model\obj\Release\Pactera.Model.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Model\obj\Release\Pactera.Model.pdb
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Model\bin\Release\LitJson.dll
+E:\工作文档\工单系统\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Model\bin\Release\Pactera.Model.dll
+E:\工作文档\工单系统\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Model\bin\Release\Pactera.Model.pdb
+E:\工作文档\工单系统\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Model\bin\Release\LitJson.dll
+E:\工作文档\工单系统\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Model\obj\Release\Pactera.Model.dll
+E:\工作文档\工单系统\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Model\obj\Release\Pactera.Model.pdb
+E:\工作文档\工单系统\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Model\obj\Release\Pactera.Model.csprojResolveAssemblyReference.cache
+E:\工作文档\工作交接内容\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Model\bin\Release\Pactera.Model.dll
+E:\工作文档\工作交接内容\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Model\bin\Release\Pactera.Model.pdb
+E:\工作文档\工作交接内容\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Model\bin\Release\LitJson.dll
+E:\工作文档\工作交接内容\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Model\obj\Release\Pactera.Model.csprojResolveAssemblyReference.cache
+E:\工作文档\工作交接内容\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Model\obj\Release\Pactera.Model.dll
+E:\工作文档\工作交接内容\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Model\obj\Release\Pactera.Model.pdb

@@ -1,0 +1,121 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+
+    <title>流程图DEMO</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!--[if lt IE 9]>
+    <?import namespace="v" implementation="#default#VML" ?>
+    <![endif]-->
+
+    <!--<link rel="stylesheet" type="text/css" href="codebase/GooFlow2.css"/>-->
+
+    <link href="codebase/GooFlow.css" rel="stylesheet" />
+    <link href="../jquery-easyui-1.4.1/themes/default/easyui.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script src="../jquery-easyui-1.4.1/jquery.easyui.min.js"></script>
+
+    <script type="text/javascript" src="GooFunc.js"></script>
+    <script type="text/javascript" src="json2.js"></script>
+    <script type="text/javascript" src="codebase/GooFlow.js"></script>
+
+    <script type="text/javascript">
+
+        var demo;
+        var flowCode = "EngineV2";
+        var wfInstance;
+
+        var property = {
+            width: 880,
+            height: 450,
+            //toolBtns: ["start round", "end", "task", "node", "chat", "state", "plug", "join", "fork", "complex mix"],
+            toolBtns: ["Start", "Approve", "CounterSign", "Notification", "FormValidation", "End"],
+            haveHead: true,
+            headBtns: ["new", "open", "save", "undo", "redo", "reload"],//如果haveHead=true，则定义HEAD区的按钮
+            haveTool: true,
+            haveGroup: true,
+            useOperStack: true
+        };
+        
+        var remark = {
+            cursor: "选择指针",
+            direct: "转换连线",
+            Start: "开始节点",
+            Approve: "审批节点",
+            CounterSign: "会签节点",
+            Notification: "通知节点",
+            FormValidation: "表单验证节点",
+            End: "完成节点",
+            group: "组织划分框编辑开关"
+        };
+
+        $(document).ready(function () {
+            demo = $.createGooFlow($("#demo"), property);
+            demo.setNodeRemarks(remark);
+            //demo.onItemDel=function(id,type){
+            //	return confirm("确定要删除该单元吗?");
+            //}
+
+            // 获取工作流程实例
+            /*
+            $.post("/Handler/PublicWorkflow.ashx", { action: "get_workflow_template_json", flow_name: flowCode }, function (data) {
+                demo.loadData()
+            });*/
+
+            /*
+            $.ajax({
+                type: para.type,
+                url: para.url,
+                dataType: "json",
+                data: para.data,
+                success: function (msg) {
+                    if (para.dataFilter) para.dataFilter(msg, "json");
+                    This.loadData(msg);
+                    if (para.success) para.success(msg);
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    if (para.error) para.error(textStatus, errorThrown);
+                }
+            });*/
+
+            demo.onBtnSaveClick = function () {
+                var data = demo.exportData();
+                data.FlowCode = flowCode;
+                var jsonData = JSON.stringify(data);
+
+                $.post("/Handler/PublicWorkflow.ashx", { action: "update_workflow_template", data: jsonData }, function (result) {
+                    //var r = JSON.parse(result);
+                    //alert(r.Message);
+                    alert(result);
+                });
+            }
+
+            demo.loadDataAjax({
+                type: "post",
+                url: "/Handler/PublicWorkflow.ashx",
+                data: { action: "get_workflow_template_json", flow_code: flowCode }
+            });
+
+            /*
+            jsondata = { "title": "默认流程", "nodes": { "demo_node_2": { "name": "node_2", "left": 380, "top": 59, "type": "StepCounterSign", "width": 150, "height": 40, "alt": true } }, "lines": {}, "areas": {}, "initNum": 3 };
+            demo.loadData(jsondata);*/
+        });
+
+        var out;
+        function Export() {
+            document.getElementById("result").value = JSON.stringify(demo.exportData());
+        }
+    </script>
+</head>
+<body>
+    <!--改变鼠标样式-->
+    <!--style="cursor:url(cursor_add.ico), auto;"-->
+    <div id="demo"></div>
+    <textarea id="json"></textarea>
+    <!--
+    <input id="submit" type="button" value="导出结果" onclick="Export()" />
+    <textarea id="result" style="width:400px; height:400px;"></textarea>-->
+</body>
+</html>

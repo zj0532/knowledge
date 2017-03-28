@@ -1,0 +1,29 @@
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Common\bin\Debug\Pactera.Common.dll.config
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Common\bin\Debug\Pactera.Common.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Common\bin\Debug\Pactera.Common.pdb
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Common\bin\Debug\log4net.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Common\bin\Debug\NPOI.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Common\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Common\bin\Debug\log4net.xml
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Common\obj\Debug\Pactera.Common.csprojResolveAssemblyReference.cache
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Common\obj\Debug\Pactera.Common.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Common\obj\Debug\Pactera.Common.pdb
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Common\bin\Debug\Pactera.Common.dll.config
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Common\bin\Debug\Pactera.Common.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Common\bin\Debug\Pactera.Common.pdb
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Common\bin\Debug\log4net.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Common\bin\Debug\NPOI.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Common\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Common\bin\Debug\log4net.xml
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Common\obj\Debug\Pactera.Common.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Common\obj\Debug\Pactera.Common.pdb
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Common\bin\Debug\Pactera.Common.dll.config
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Common\bin\Debug\Pactera.Common.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Common\bin\Debug\Pactera.Common.pdb
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Common\bin\Debug\log4net.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Common\bin\Debug\NPOI.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Common\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Common\bin\Debug\log4net.xml
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Common\obj\Debug\Pactera.Common.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Common\obj\Debug\Pactera.Common.pdb
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Common\obj\Debug\Pactera.Common.csprojResolveAssemblyReference.cache

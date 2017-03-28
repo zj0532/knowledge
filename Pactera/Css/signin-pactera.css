@@ -1,0 +1,120 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size:12px;
+    font-family:'Microsoft YaHei';
+    background-color:#227cb1;
+}
+.signin_wrap {
+    margin: 70px auto;
+    width:678px;
+    height:400px;
+    text-align:center;
+}
+.signin_wrap .content{
+    height:308px;
+    width:678px;
+    background-color:#ffffff;
+    box-shadow: 0px 0px 15px #444444;
+    -moz-box-shadow: 0px 0px 15px #444444;
+    -webkit-box-shadow: 0px 0px 15px #444444;
+    margin-top:25px;
+}
+.signin_wrap .content .left{
+    float:left;
+}
+.signin_wrap .content .right{
+    float:right;
+    width:458px;
+}
+.signin_wrap .content .right div{
+    margin-top:28px;
+}
+.signin_wrap .content .right .user-name-box{
+    margin-top:35px;
+}
+.signin_wrap .content .right .password-box{
+    margin-top:25px;
+}
+.signin_wrap .content .right .message{
+    color:#ff0000;
+    margin-top:13px;
+}
+.bottom_wrap{
+    position:fixed;
+    bottom:0px;
+    text-align:center;
+    width:100%;
+    background-color:#4490bc;
+    padding:12px 0px 12px 0px;
+}
+
+/*重写EasyUI的TextBox样式*/
+
+.textbox {
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0;
+    /*ZCY*/
+    width: 210px;
+    font-family:'Microsoft YaHei';
+    /*WCX-去掉加粗，字变黑色*/
+    /*font-weight: bold;*/
+    color:#000000;
+    border: 1px solid #bac7d2;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    border-radius: 3px 3px 3px 3px;
+    padding: 6px 0px 6px 30px;
+    font-size: 16px;
+}
+.textbox-focused {
+    /*WCX-文本框激活颜色*/
+    -moz-box-shadow: 0 0 5px 0 #0033ff;
+    -webkit-box-shadow: 0 0 5px 0 #0033ff;
+    box-shadow: 0 0 5px 0 #0033ff;
+}
+.icon-man{
+    background:url(../icons/man.png) no-repeat 7px center;
+    background-color:#ecf5fa;
+}
+        
+.icon-lock{
+    background:url(../icons/lock.png) no-repeat 7px center;
+    background-color:#ecf5fa;
+}
+
+.l-btn {
+    text-decoration: none;
+    display: inline-block;
+    overflow: hidden;
+    margin: 0;
+    padding: 3px 20px 3px 20px;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    vertical-align: middle;
+}
+.l-btn {
+    color: #444;
+    background: #fafafa;
+    border: 1px solid #bbb;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    /*ZCY*/
+    border: 1px solid #59c9e5;
+    background: none;
+    font-family: 'Microsoft YaHei';
+    font-size: 14px;
+    color: #333333;
+    margin: 0px 5px 0px 5px;
+}
+.l-btn:hover {
+    background: #59c9e5;
+    color: #ffffff;
+    border: 1px solid #59c9e5;
+    filter: none;
+}

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow FlowCode="BidCashDeposit" Status="0" Name="投标保证金" Description="投标保证金审批流程" Version="">
+
+    <!-- 开始 -->
+    <Step StepNumber="1" Description="发起" ParentNumber="0">
+        <Action ActionType="Start" />
+    </Step>
+
+    <!-- 会签 - 分公司市场部经理、分公司财务部经理 -->
+    <Step StepNumber="2" Description="分公司市场部经理、分公司财务部经理" ParentNumber="1">
+        <ActionRule Peoples="2" />
+        <Action ActionType="CounterSign">
+            <Approve PersonType="Role">3,9</Approve>
+        </Action>
+    </Step>
+
+    <!-- 会签 - 子集团市场部经理、子集团财务部经理 -->
+    <Step StepNumber="3" Description="子集团市场部、子集团财务部" ParentNumber="2">
+        <ActionRule Peoples="2" />
+        <Action ActionType="CounterSign">
+            <Approve PersonType="Role">10,11</Approve>
+        </Action>
+    </Step>
+
+    <!-- 审批 - 集团市场部 -->
+    <Step StepNumber="4" Description="集团市场部" ParentNumber="3">
+        <Action ActionType="Approve">
+            <Approve PersonType="Role">13</Approve>
+        </Action>
+    </Step>
+    <Step StepNumber="5" Description="审批通过" ParentNumber="4">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">1</Condition>
+        </Action>
+    </Step>
+    <Step StepNumber="6" Description="审批不通过" ParentNumber="4">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">0</Condition>
+        </Action>
+    </Step>
+
+    <!-- 审批 - 总承包事业部财务部 -->
+    <Step StepNumber="7" Description="总承包事业部财务部" ParentNumber="5">
+        <Action ActionType="Approve">
+            <Approve PersonType="Role">15</Approve>
+        </Action>
+    </Step>
+    <Step StepNumber="8" Description="审批通过" ParentNumber="7">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">1</Condition>
+        </Action>
+    </Step>
+    <Step StepNumber="9" Description="审批不通过" ParentNumber="7">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">0</Condition>
+        </Action>
+    </Step>
+
+    <!-- 结束 -->
+    <Step StepNumber="10" Description="结束" ParentNumber="8">
+        <Action ActionType="End" />
+    </Step>
+
+</Workflow>

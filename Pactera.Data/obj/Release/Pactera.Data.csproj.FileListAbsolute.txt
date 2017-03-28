@@ -1,0 +1,17 @@
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Data\bin\Release\Pactera.Data.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Data\bin\Release\Pactera.Data.pdb
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Data\bin\Release\Oracle.ManagedDataAccess.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Data\obj\Release\Pactera.Data.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Data\obj\Release\Pactera.Data.pdb
+E:\工作文档\工单系统\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Data\bin\Release\Pactera.Data.dll
+E:\工作文档\工单系统\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Data\bin\Release\Pactera.Data.pdb
+E:\工作文档\工单系统\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Data\bin\Release\Oracle.ManagedDataAccess.dll
+E:\工作文档\工单系统\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Data\obj\Release\Pactera.Data.csprojResolveAssemblyReference.cache
+E:\工作文档\工单系统\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Data\obj\Release\Pactera.Data.dll
+E:\工作文档\工单系统\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Data\obj\Release\Pactera.Data.pdb
+E:\工作文档\工作交接内容\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Data\bin\Release\Pactera.Data.dll
+E:\工作文档\工作交接内容\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Data\bin\Release\Pactera.Data.pdb
+E:\工作文档\工作交接内容\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Data\bin\Release\Oracle.ManagedDataAccess.dll
+E:\工作文档\工作交接内容\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Data\obj\Release\Pactera.Data.csprojResolveAssemblyReference.cache
+E:\工作文档\工作交接内容\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Data\obj\Release\Pactera.Data.dll
+E:\工作文档\工作交接内容\知识库系统\Framework\PacteraFramework-Branch-V2\Pactera.Data\obj\Release\Pactera.Data.pdb

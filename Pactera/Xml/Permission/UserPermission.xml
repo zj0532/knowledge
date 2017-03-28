@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PermissionList>
+
+    <!--系统权限列表-->
+    <Permission Key="SYS_001" Group="System" Text="是否允许登录系统" />
+
+    <!--用户权限列表-->
+    <Permission Key="User_Admin" Menu="User" Text="完全控制" />
+    <Permission Key="USER_001" Menu="User" Text="添加" />
+    <Permission Key="USER_002" Group="User" Text="修改" />
+    <Permission Key="USER_003" Group="User" Text="删除" />
+    <Permission Key="USER_004" Group="User" Text="还原" />
+    <Permission Key="USER_005" Group="User" Text="永久删除" />
+    <Permission Key="USER_006" Group="User" Text="锁定用户" />
+    <Permission Key="USER_007" Group="User" Text="分配权限" />
+
+    <!--用户权限列表-->
+    <Permission Key="USER_001" Group="User" Text="添加" />
+    <Permission Key="USER_002" Group="User" Text="修改" />
+    <Permission Key="USER_003" Group="User" Text="删除" />
+    <Permission Key="USER_004" Group="User" Text="还原" />
+    <Permission Key="USER_005" Group="User" Text="永久删除" />
+    <Permission Key="USER_006" Group="User" Text="锁定用户" />
+    <Permission Key="USER_007" Group="User" Text="分配权限" />
+
+</PermissionList>

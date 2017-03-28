@@ -1,0 +1,27 @@
+﻿* { font-size: 12px; font-family: Tahoma,Verdana,微软雅黑,新宋体; }
+body { background: #D2E0F2; }
+.textbox03 { border: #878787 1px solid; padding: 4px 3px; font: Verdana, Geneva, sans-serif,宋体; line-height: 14px; background-color: #fff; height: auto; font-size: 14px; font-weight: bold; width: 240px; }
+
+.txt01 { font: Verdana, Geneva, sans-serif,宋体; padding: 3px 2px 2px 2px; border-width: 1px; border-color: #ddd; color: #000; }
+.txt { border: #878787 1px solid; padding: 4px 3px; font: Verdana, Geneva, sans-serif,宋体; line-height: 14px; background-color: #fff; height: auto; font-size: 14px; }
+.footer { text-align: center; color: #15428B; margin: 0px; padding: 0px; line-height: 23px; font-weight: bold; }
+
+.head a { color: White; text-decoration: underline; }
+
+.easyui-accordion ul li { padding: 0px; }
+.easyui-accordion ul li a { line-height: 26px; margin: 0px; padding: 3px 0px 3px 10px; display: block; text-decoration: none; }
+.easyui-accordion ul li span {height: 16px; width: 16px; margin: 3px 3px 0px 0px; display: inline-block; }
+.easyui-accordion ul li a:hover { line-height: 24px; padding:3px 0px 3px 9px; border: 1px dashed #99BBE8; background: #E0ECFF; color: #416AA3; }
+.easyui-accordion ul li a.selected { line-height: 24px; padding: 3px 0px 3px 9px; border: 1px solid #99BBE8; background: #E0ECFF; }
+
+.nav { padding-left: 18px; }
+
+.icon-sys { background: url(../image/directory.png) no-repeat; }
+
+.icon { background: url(../image/tabicons.png) no-repeat; width: 16px; height: 16px; position: absolute; }
+.icon-add { background-position: -19px 0px; }
+.icon-nav { background-position: -100px -18px; }
+.icon-users { background-position: -100px -480px; }
+.icon-role { background-position: -360px -200px; }
+.icon-set { background-position: -380px -200px; }
+.icon-log { background-position: -380px -80px; }

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow FlowCode="EngineV2" Name="测试流程" Description="投标报名审批流程" Version="2.0">
+
+	<Nodes>
+		<!-- 开始 -->
+		<Node NodeNumber="1">
+			<Display Location="420,10" Size="90,35" Description="开始" />
+			<Action ActionType="Start" />
+			<NextNodes>
+				<ToNode Type="Normal" ToNodeNumber="2"></ToNode>
+			</NextNodes>
+		</Node>
+		
+		<Node NodeNumber="2" AutoSkip="False">
+			<Display Location="400,70" Size="170,35" Description="审批" />
+			<Action ActionType="Approve">
+				<Approve PersonType="Role">3</Approve>
+			</Action>
+			<NextNodes>
+				<ToNode Type="ApproveAgree" ToNodeNumber="3" />
+				<!--
+				<ToNode Type="Condition" ToNodeNumber="4" ConditionType="Form">[RegisteredCapital] &lt;= 1</ToNode>
+				<ToNode Type="Condition" ToNodeNumber="3" ConditionType="Form">[RegisteredCapital] &gt; 1</ToNode>-->
+			</NextNodes>
+			<Nitifications>
+				<!-- 通知人：发起人|当前节点处理人（包含多个）|自定义通知 -->
+				<!-- 进入节点时发送通知 -->
+				<Notification Enable="True" NotificationAt="Entering|ProcessingSuccess|ProcessingFailure">
+					<Param Name="TemplateCode" Value="8301DC5E-32EF-4E0B-A75C-6F2AE200F744" />
+					<Param Name="MessageType" Value="OCS|SMS" />
+					<Persons>
+						<Param Name="Caller" Value="" />
+						<Param Name="Handler" Value="" />
+						<Param Name="Specified" Value="" />
+					</Persons>
+				</Notification>
+				<!-- 处理成功后发送通知 -->
+				<Notification Enable="True" NotificationAt="ProcessingSuccess">
+					<Param Name="TemplateCode" Value="8301DC5E-32EF-4E0B-A75C-6F2AE200F744" />
+					<Param Name="PersonType" Value="Caller|Handler|UserId,UserId" />
+				</Notification>
+				<!-- 处理失败后发送通知 -->
+				<Notification Enable="True" NotificationAt="ProcessingFailure">
+					<Param Name="TemplateCode" Value="8301DC5E-32EF-4E0B-A75C-6F2AE200F744" />
+					<Param Name="PersonType" Value="Caller|Handler|UserId,UserId" />
+				</Notification>
+			</Nitifications>
+		</Node>
+		
+		<Node NodeNumber="3" AutoSkip="False">
+			<ActionRule Peoples="5" />
+			<Display Location="400,130" Size="150,35" Description="会签" />
+			<Action ActionType="CounterSign">
+				<Approve PersonType="Role">35,36,37,38,39</Approve>
+			</Action>
+			<NextNodes>
+				<ToNode Type="ApproveAgree" ToNodeNumber="4" />
+			</NextNodes>
+		</Node>
+		
+		<!-- 结束 -->
+		<Node NodeNumber="4" ParentNumber="6">
+			<Display Location="430,350" Size="90,30" Description="结束" />
+			<Action ActionType="End" />
+		</Node>
+	</Nodes>
+
+</Workflow>

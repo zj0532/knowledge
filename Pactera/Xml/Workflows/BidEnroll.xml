@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow FlowCode="BidEnroll" Status="0" Name="投标报名" Description="投标报名审批流程" Version="">
+
+    <!-- 开始 -->
+    <Step StepNumber="1" Description="发起" ParentNumber="0" DisplayLocationX="400" DisplayLocationY="10" DisplayWidth="120" DisplayHeight="30">
+        <Action ActionType="Start" />
+    </Step>
+
+    <!-- 审批 - 分公司市场部经理 -->
+    <Step StepNumber="2" AutoSkip="True" Description="分公司市场部经理" ParentNumber="1" DisplayLocationX="400" DisplayLocationY="80" DisplayWidth="150" DisplayHeight="30">
+        <Action ActionType="Approve">
+            <Approve PersonType="Role">3</Approve>
+        </Action>
+    </Step>
+    <Step StepNumber="3" Description="审批通过" ParentNumber="2" DisplayLocationX="330" DisplayLocationY="150" DisplayWidth="120" DisplayHeight="30">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">1</Condition>
+        </Action>
+    </Step>
+    <Step StepNumber="4" Description="审批不通过" ParentNumber="2" DisplayLocationX="470" DisplayLocationY="150" DisplayWidth="120" DisplayHeight="30">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">0</Condition>
+        </Action>
+    </Step>
+
+    <!-- 审批 - 子集团市场部审批 -->
+    <Step StepNumber="5" Description="子集团市场部" ParentNumber="3" DisplayLocationX="400" DisplayLocationY="200" DisplayWidth="120" DisplayHeight="30">
+        <Action ActionType="Approve">
+            <Approve PersonType="Role">10</Approve>
+        </Action>
+    </Step>
+    <Step StepNumber="6" Description="审批通过" ParentNumber="5" DisplayLocationX="330" DisplayLocationY="250" DisplayWidth="120" DisplayHeight="30">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">1</Condition>
+        </Action>
+    </Step>
+    <Step StepNumber="7" Description="审批不通过" ParentNumber="5" DisplayLocationX="470" DisplayLocationY="250" DisplayWidth="120" DisplayHeight="30">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">0</Condition>
+        </Action>
+    </Step>
+
+    <!-- 审批 - 区域管理机构审批 -->
+    <Step StepNumber="8" AutoSkip="True" Description="区域管理机构领导" ParentNumber="6" DisplayLocationX="400" DisplayLocationY="300" DisplayWidth="150" DisplayHeight="30">
+        <Action ActionType="Approve">
+            <Approve PersonType="Role">16</Approve>
+        </Action>
+    </Step>
+    <Step StepNumber="9" Description="审批通过" ParentNumber="8" DisplayLocationX="330" DisplayLocationY="350" DisplayWidth="120" DisplayHeight="30">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">1</Condition>
+        </Action>
+    </Step>
+    <Step StepNumber="10" Description="审批不通过" ParentNumber="8" DisplayLocationX="470" DisplayLocationY="350" DisplayWidth="120" DisplayHeight="30">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">0</Condition>
+        </Action>
+    </Step>
+
+    <!-- 审批 - 集团市场部 -->
+    <Step StepNumber="11" Description="集团市场部" ParentNumber="9" DisplayLocationX="400" DisplayLocationY="400" DisplayWidth="120" DisplayHeight="30">
+        <Action ActionType="Approve">
+            <Approve PersonType="Role">13</Approve>
+        </Action>
+    </Step>
+    <Step StepNumber="12" Description="审批通过" ParentNumber="11" DisplayLocationX="330" DisplayLocationY="450" DisplayWidth="120" DisplayHeight="30">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">1</Condition>
+        </Action>
+    </Step>
+    <Step StepNumber="13" Description="审批不通过" ParentNumber="11" DisplayLocationX="470" DisplayLocationY="450" DisplayWidth="120" DisplayHeight="30">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">0</Condition>
+        </Action>
+    </Step>
+
+    <!--集团相关部门会签（用印业务审批35、借证业务审批36、开户许可证审批37、税务登记证审批38、财务审计报告39）-->
+    <Step StepNumber="14" Description="集团相关部门" ParentNumber="12" DisplayLocationX="400" DisplayLocationY="500" DisplayWidth="120" DisplayHeight="30">
+        <ActionRule Peoples="5" />
+        <Action ActionType="CounterSign">
+            <Approve PersonType="Role">35,36,37,38,39</Approve>
+        </Action>
+    </Step>
+    <!-- 审批 - 集团综合管理部 -->
+    <!--<Step StepNumber="14" Description="集团综合管理部" ParentNumber="12">
+        <Action ActionType="Approve">
+            <Approve PersonType="Role">14</Approve>
+        </Action>
+    </Step>
+    <Step StepNumber="15" Description="审批通过" ParentNumber="14">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">1</Condition>
+        </Action>
+    </Step>
+    <Step StepNumber="16" Description="审批不通过" ParentNumber="14">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">0</Condition>
+        </Action>
+    </Step>-->
+
+    <!-- 结束 -->
+    <Step StepNumber="15" Description="结束" ParentNumber="14" DisplayLocationX="400" DisplayLocationY="600" DisplayWidth="120" DisplayHeight="30">
+        <Action ActionType="End" />
+    </Step>
+
+    <Links>
+        <Link From="1" To="2" Name="" />
+        <Link From="2" To="3" Name="" />
+        <Link From="2" To="4" Name="" />
+        <Link From="3" To="5" Name="" />
+        <Link From="5" To="6" Name="" />
+        <Link From="5" To="7" Name="" />
+        <Link From="6" To="8" Name="" />
+        <Link From="8" To="9" Name="" />
+        <Link From="8" To="10" Name="" />
+        <Link From="9" To="11" Name="" />
+        <Link From="11" To="12" Name="" />
+        <Link From="11" To="13" Name="" />
+        <Link From="12" To="14" Name="" />
+        <Link From="14" To="15" Name="" />
+    </Links>
+    
+</Workflow>

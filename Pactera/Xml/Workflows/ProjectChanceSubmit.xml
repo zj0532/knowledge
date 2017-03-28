@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow FlowCode="ProjectChanceSubmit" Status="0" Name="市场机会登记" Description="市场机会登记审批流程" Version="">
+
+    <!-- 开始 -->
+    <Step StepNumber="1" Description="发起" ParentNumber="0">
+        <Action ActionType="Start" />
+    </Step>
+
+    <!-- 审批 - 分公司市场部经理 -->
+    <Step StepNumber="2" Description="分公司市场部经理" ParentNumber="1">
+        <Action ActionType="Approve">
+            <Approve PersonType="Role">3</Approve>
+        </Action>
+    </Step>
+    <Step StepNumber="3" Description="审批通过" ParentNumber="2">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">1</Condition>
+        </Action>
+    </Step>
+    <Step StepNumber="4" Description="审批不通过" ParentNumber="2">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">0</Condition>
+        </Action>
+    </Step>
+
+	<!-- 审批 - 区域管理机构领导 -->
+	<Step StepNumber="5" AutoSkip="True" Description="区域管理机构领导" ParentNumber="3">
+	<Action ActionType="Approve">
+		<Approve PersonType="Role">16</Approve>
+	</Action>
+	</Step>
+	<Step StepNumber="6" Description="审批通过" ParentNumber="5">
+	<Action ActionType="Judge">
+		<Condition Type="Approve">1</Condition>
+	</Action>
+	</Step>
+	<Step StepNumber="7" Description="审批不通过" ParentNumber="5">
+	<Action ActionType="Judge">
+		<Condition Type="Approve">0</Condition>
+	</Action>
+	</Step>
+
+    <!-- 审批 - 集团市场部 -->
+    <Step StepNumber="8" Description="集团市场部" ParentNumber="6">
+        <Action ActionType="Approve">
+            <Approve PersonType="Role">13</Approve>
+        </Action>
+    </Step>
+    <Step StepNumber="9" Description="审批通过" ParentNumber="8">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">1</Condition>
+        </Action>
+    </Step>
+    <Step StepNumber="10" Description="审批不通过" ParentNumber="8">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">0</Condition>
+        </Action>
+    </Step>
+
+    <!-- 表单判断 -->
+    <Step StepNumber="11" Description="大于等于5000万" ParentNumber="9">
+        <Action ActionType="Judge">
+            <Source>BuildCost</Source>
+            <Condition Type="Form">&gt;=#5000</Condition>
+        </Action>
+    </Step>
+
+    <!-- 表单判断 -->
+    <Step StepNumber="12" Description="小于5000万" ParentNumber="9">
+        <Action ActionType="Judge">
+            <Source>BuildCost</Source>
+            <Condition Type="Form">&lt;#5000</Condition>
+        </Action>
+    </Step>
+
+    <!-- 表单判断 -->
+    <Step StepNumber="13" Description="有竞争者" ParentNumber="11">
+        <Action ActionType="Judge">
+            <Source>ContestantCorpName</Source>
+            <Condition Type="Form">!=#</Condition>
+        </Action>
+    </Step>
+
+    <!-- 表单判断 -->
+    <Step StepNumber="14" Description="无竞争者" ParentNumber="11">
+        <Action ActionType="Judge">
+            <Source>ContestantCorpName</Source>
+            <Condition Type="Form">=#</Condition>
+        </Action>
+    </Step>
+
+    <!-- 结束 -->
+    <Step StepNumber="15" Description="结束" ParentNumber="12">
+        <Action ActionType="End" />
+    </Step>
+
+    <!-- 审批 - 集团市场部经理 -->
+    <Step StepNumber="16" Description="集团市场部经理" ParentNumber="13">
+        <Action ActionType="Approve">
+            <Approve PersonType="Role">19</Approve>
+        </Action>
+    </Step>
+    <Step StepNumber="18" Description="审批通过" ParentNumber="16">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">1</Condition>
+        </Action>
+    </Step>
+    <Step StepNumber="19" Description="审批不通过" ParentNumber="16">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">0</Condition>
+        </Action>
+    </Step>
+
+    <!-- 结束 -->
+    <Step StepNumber="17" Description="结束" ParentNumber="14">
+        <Action ActionType="End" />
+    </Step>
+
+    <!-- 结束 -->
+    <Step StepNumber="20" Description="结束" ParentNumber="18">
+        <Action ActionType="End" />
+    </Step>
+
+    <FormCondition>
+        <!-- 这里列出可以用来判断的条件，供修改工作流使用 Operator="&lt;" Value="1000" -->
+        <Item Field="BuildCost" DisplayText="工程造价（万元）" />
+    </FormCondition>
+
+</Workflow>

@@ -1,0 +1,117 @@
+.workflow-desc {
+    font-size: 12px;
+    font-family: 'Microsoft YaHei';
+}
+
+.workflow-desc .step-start {
+    width: 42px;
+    height: 30px;
+    float: left;
+    text-align: center;
+    padding-top: 12px;
+    border: 1px solid #1b94f2;
+    margin: 15px 5px 15px 0px;
+    border-radius: 21px; /* 所有角都使用半径为5px的圆角，此属性为CSS3标准属性 */
+    -moz-border-radius: 21px; /* Mozilla浏览器的私有属性 */
+    -webkit-border-radius: 23px; /* Webkit浏览器的私有属性 */
+    border-radius: 21px 21px 21px 21px; /* 四个半径值分别是左上角、右上角、右下角和左下角 */
+}
+
+.yuanjiao {
+    border-radius: 21px; /* 所有角都使用半径为5px的圆角，此属性为CSS3标准属性 */
+    -moz-border-radius: 21px; /* Mozilla浏览器的私有属性 */
+    -webkit-border-radius: 23px; /* Webkit浏览器的私有属性 */
+    border-radius: 21px 21px 21px 21px; /* 四个半径值分别是左上角、右上角、右下角和左下角 */
+}
+
+.workflow-desc .step-end {
+}
+
+.workflow-desc .step-arrow-hollow {
+    width: 24px;
+    height: 42px;
+    float: left;
+    background-image: url('../pactera/images/workflow_arrow_hollow.png');
+    background-repeat: no-repeat;
+    background-position: 0px 13px;
+    margin: 15px 5px 15px 0px;
+    border:1px solid #ffffff;
+}
+
+.workflow-desc .step-arrow-solid {
+    width: 24px;
+    height: 42px;
+    float: left;
+    background-image: url('../pactera/images/workflow_arrow_solid.png');
+    background-repeat: no-repeat;
+    background-position: 0px 13px;
+    margin: 15px 5px 15px 0px;
+    border:1px solid #ffffff;
+}
+
+.workflow-desc .step-approve,
+.workflow-desc .step-complete {
+    height: 42px;
+    float: left;
+    padding: 0px;
+    text-align: center;
+    border: 1px solid #1b94f2;
+    background-color: #ffffff;
+    margin: 15px 5px 15px 0px;
+}
+
+.workflow-desc .step-current {
+    height: 40px;
+    float: left;
+    padding: 0px;
+    text-align: center;
+    /*border: 1px solid #1b94f2;*/
+    border: 2px solid red;
+    background-color: #ffffff;
+    box-shadow: 3px 3px 8px #ccc;
+    -moz-box-shadow: 3px 3px 8px #ccc;
+    -webkit-box-shadow: 3px 3px 8px #ccc;
+    margin: 15px 5px 15px 0px;
+    /*WCX当前节点加粗*/
+    font-weight:600;
+}
+
+.workflow-desc .step-complete {
+    border: 1px solid #999999;
+}
+
+.workflow-desc .step-complete .step-action {
+    color: #ffffff;
+    background-color: #63b2ef;
+    padding: 2px 5px 2px 5px;
+    cursor: pointer;
+}
+
+.workflow-desc .step-complete .step-persion {
+    padding: 3px;
+    color: #333;
+}
+
+.workflow-desc .step-current .step-action {
+    color: #ffffff;
+    background-color: #63b2ef;
+    padding: 2px 5px 2px 5px;
+    cursor: pointer;
+}
+
+.workflow-desc .step-current .step-persion {
+    padding: 3px;
+    padding: 1px 3px 5px 3px;
+    color: #000;
+}
+
+.workflow-desc .step-approve .step-action {
+    color: #ffffff;
+    background-color: #63b2ef;
+    padding: 2px 5px 2px 5px;
+    white-space:nowrap;
+}
+
+.workflow-desc .step-approve .step-persion {
+    padding: 2px;
+}

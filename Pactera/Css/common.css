@@ -1,0 +1,112 @@
+*,body{
+    font-size:12px;font-family:Arial;color:#666;padding:0px;margin:0px;overflow:hidden
+}
+.clear { 
+clear:both;
+}
+.header {
+    background-image: url(../images/blocks.gif);
+    background-position: left center;
+    background-repeat: no-repeat;
+    width: 100%;
+    color: #ffffff;
+    padding-left: 40px;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #95b8e7;
+    overflow:hidden;
+}
+.head {
+float:right; padding-right:20px; padding-top:5px;color:#ffffff;
+}
+#Timer nobr{
+color:#ffffff;
+}
+.footer {
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    overflow: hidden;
+    width: 100%;
+    background: #95b8e7;
+    color: #ffffff;
+}
+.kuang {
+width:98%;margin:0 auto;
+}
+.sidebar {
+    width:16%;height:auto;
+}
+.center {
+height:auto;width:84%;overflow-y:scroll
+}
+.khxx {
+    width: 30%;
+    float: left;
+}
+ tr{
+    height:30px;overflow:hidden;
+}
+table .sanshi {
+    height:30px;
+}
+table .qishi {
+    height:70px;
+}
+table .bashi {
+    height:80px;
+}
+.wt-description {
+    width:860px;height:35px;
+}
+.wt-description span{
+    width:80px;height:35px;display:block;float:left;text-align:right;
+}
+.wt01-description {
+width:330px;height:120px;float:left
+}
+.wt01-description span{
+width:80px;height:80px;text-align:right;float:left;line-height:60px;
+}
+.wt01-description input{
+width:250px;height:80px;float:left;line-height:60px;
+}
+.wt01-description input[type=checkbox]{
+
+}
+.wt01-description a{
+display:block;width:100px;height:30px;
+}
+.wt-description label{
+    width:100px;float:left;height:35px;display:block;
+}
+.rwcl {
+padding:10px;width:120px;height:45px;line-height:45px;text-align:center;
+}
+.wtclxx {
+    width: 80px; height: 35px; display: block; float: left; text-align: right;line-height:35px;margin-top:12px;
+}
+.wtclxx02 {
+    width: 80px; height: 25px; display: block; float: left; text-align: right;line-height:25px;
+}
+.wtclxx03 {
+    width: 100px; height: 25px; display: block; float: left; text-align: right;line-height:25px;margin-top:10px;
+}
+.khxx table td{text-align:right;}
+
+.rwcl {
+padding:10px;width:120px;height:45px;line-height:45px;text-align:center;
+}
+.lines{
+    width:98%;height:35px;line-height:35px;padding-left:5px;border-bottom:1px dashed #ccc;
+}
+    .lines a.desc {
+    display:inline-block;float:left;width:60%;cursor:pointer
+    }
+    .lines a.detail {
+    display:inline-block;float:right;width:20%;text-align:right;font-weight:bold;font-size:12px;color:#95b8e7;text-decoration:underline;cursor:pointer
+    }
+.sidebaritem { 
+margin-left:40px;cursor:pointer;height:25px;line-height:25px;
+}

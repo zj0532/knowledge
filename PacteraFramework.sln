@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pactera.Test", "Pactera.Test\Pactera.Test.csproj", "{5F9BEC35-0C6A-417D-8EA9-4F2ACFE379C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pactera.Model", "Pactera.Model\Pactera.Model.csproj", "{1EFC2306-18BA-4A19-A935-EB18DBC9D379}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pactera.Core", "Pactera.Core\Pactera.Core.csproj", "{F0662D9B-1176-4366-B42A-B24308AA986D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pactera.Data", "Pactera.Data\Pactera.Data.csproj", "{06C01C7D-6865-499C-93F9-DA9AA3369717}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pactera.Common", "Pactera.Common\Pactera.Common.csproj", "{9F2BD1B4-11B8-41A9-A77B-70E80E8408F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pactera", "Pactera\Pactera.csproj", "{B4911224-BF93-4AB9-A6B3-9D760B534E75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pactera.Web", "Pactera.Web\Pactera.Web.csproj", "{A1FCD3A9-A905-4E8B-9DC4-0944BE70D94C}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://crazycsharp.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Pactera.Test\\Pactera.Test.csproj
+		SccProjectName1 = Pactera.Test
+		SccLocalPath1 = Pactera.Test
+		SccProjectUniqueName2 = Pactera.Model\\Pactera.Model.csproj
+		SccProjectName2 = Pactera.Model
+		SccLocalPath2 = Pactera.Model
+		SccProjectUniqueName3 = Pactera.Core\\Pactera.Core.csproj
+		SccProjectName3 = Pactera.Core
+		SccLocalPath3 = Pactera.Core
+		SccProjectUniqueName4 = Pactera.Data\\Pactera.Data.csproj
+		SccProjectName4 = Pactera.Data
+		SccLocalPath4 = Pactera.Data
+		SccProjectUniqueName5 = Pactera.Common\\Pactera.Common.csproj
+		SccProjectName5 = Pactera.Common
+		SccLocalPath5 = Pactera.Common
+		SccProjectUniqueName6 = Pactera\\Pactera.csproj
+		SccProjectName6 = Pactera
+		SccLocalPath6 = Pactera
+		SccProjectUniqueName7 = Pactera.Web\\Pactera.Web.csproj
+		SccProjectName7 = Pactera.Web
+		SccLocalPath7 = Pactera.Web
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F9BEC35-0C6A-417D-8EA9-4F2ACFE379C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F9BEC35-0C6A-417D-8EA9-4F2ACFE379C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F9BEC35-0C6A-417D-8EA9-4F2ACFE379C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F9BEC35-0C6A-417D-8EA9-4F2ACFE379C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EFC2306-18BA-4A19-A935-EB18DBC9D379}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EFC2306-18BA-4A19-A935-EB18DBC9D379}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EFC2306-18BA-4A19-A935-EB18DBC9D379}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EFC2306-18BA-4A19-A935-EB18DBC9D379}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0662D9B-1176-4366-B42A-B24308AA986D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0662D9B-1176-4366-B42A-B24308AA986D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0662D9B-1176-4366-B42A-B24308AA986D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0662D9B-1176-4366-B42A-B24308AA986D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06C01C7D-6865-499C-93F9-DA9AA3369717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06C01C7D-6865-499C-93F9-DA9AA3369717}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06C01C7D-6865-499C-93F9-DA9AA3369717}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06C01C7D-6865-499C-93F9-DA9AA3369717}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F2BD1B4-11B8-41A9-A77B-70E80E8408F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F2BD1B4-11B8-41A9-A77B-70E80E8408F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F2BD1B4-11B8-41A9-A77B-70E80E8408F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F2BD1B4-11B8-41A9-A77B-70E80E8408F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4911224-BF93-4AB9-A6B3-9D760B534E75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4911224-BF93-4AB9-A6B3-9D760B534E75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4911224-BF93-4AB9-A6B3-9D760B534E75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4911224-BF93-4AB9-A6B3-9D760B534E75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1FCD3A9-A905-4E8B-9DC4-0944BE70D94C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1FCD3A9-A905-4E8B-9DC4-0944BE70D94C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1FCD3A9-A905-4E8B-9DC4-0944BE70D94C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1FCD3A9-A905-4E8B-9DC4-0944BE70D94C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

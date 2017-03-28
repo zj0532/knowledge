@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow FlowCode="CreateOwner" Status="0" Name="借款申请" Description="借钱申请审批流" Version="">
+    
+    <!-- 步骤开始 -->
+    <Step StepNumber="1" Description="发起" ParentNumber="0">
+        <Action ActionType="Start" />
+    </Step>
+    
+    <!-- 审批 -->
+    <Step StepNumber="2" Description="部门审批" ParentNumber="1">
+        <Action ActionType="Approve">
+            <Approve PersonType="SpecificPerson">2001</Approve>
+        </Action>
+    </Step>
+    <Step StepNumber="3" Description="审批通过" ParentNumber="2">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">1</Condition>
+        </Action>
+    </Step>
+    <Step StepNumber="4" Description="审批不通过" ParentNumber="2">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">0</Condition>
+        </Action>
+    </Step>
+    
+    <!-- 会签 -->
+    <Step StepNumber="5" Description="会签" ParentNumber="3">
+        <ActionRule Peoples="3" />
+        <Action ActionType="CounterSign">
+            <Approve PersonType="SpecificPerson">2002,2003,2004,2005,2006</Approve>
+        </Action>
+    </Step>
+    
+    <!-- 表单判断 -->
+    <Step StepNumber="6" Description="条件A" ParentNumber="5">
+        <Action ActionType="Judge">
+            <Condition Type="Form">1</Condition>
+        </Action>
+    </Step>
+    <Step StepNumber="7" Description="条件B" ParentNumber="5">
+        <Action ActionType="Judge">
+            <Condition Type="Form">0</Condition>
+        </Action>
+    </Step>
+    
+    <!-- 结束 -->
+    <Step StepNumber="10" Description="结束" ParentNumber="9">
+        <Action ActionType="End" />
+    </Step>
+    
+    <Condition>
+        <Item Field="StartDate" DisplayText="开始日期" />
+        <Item Field="StartDate" DisplayText="开始日期" />
+    </Condition>
+    
+</Workflow>

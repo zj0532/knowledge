@@ -1,0 +1,1290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intf="http://webservice.extsoft.net" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://webservice.extsoft.net" targetNamespace="http://webservice.extsoft.net" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://webservice.extsoft.net">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="ArrayOf_xsd_string">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="xsd:string[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="sendSystemMessageRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+    <wsdl:part name="title" type="xsd:string" />
+    <wsdl:part name="content" type="xsd:string" />
+    <wsdl:part name="type" type="xsd:string" />
+    <wsdl:part name="level" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="existGroupResponse">
+    <wsdl:part name="existGroupReturn" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="updateDepartmentParentResponse">
+    <wsdl:part name="updateDepartmentParentReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteDepEmpMappingResponse">
+    <wsdl:part name="deleteDepEmpMappingReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getAllLoginUserResponse">
+    <wsdl:part name="getAllLoginUserReturn" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="getDepartmentListResponse">
+    <wsdl:part name="getDepartmentListReturn" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="getAllDepartmentResponse">
+    <wsdl:part name="getAllDepartmentReturn" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="getGroupMemberRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="groupID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getAllDepartmentIdsRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="editDepartmentResponse">
+    <wsdl:part name="editDepartmentReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addEmployeeEx5Response">
+    <wsdl:part name="addEmployeeEx5Return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="updateEmployeeRealNameRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+    <wsdl:part name="newRealName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addEmployeeEx4Request">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+    <wsdl:part name="realName" type="xsd:string" />
+    <wsdl:part name="sex" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+    <wsdl:part name="duty" type="xsd:string" />
+    <wsdl:part name="mobile" type="xsd:string" />
+    <wsdl:part name="email" type="xsd:string" />
+    <wsdl:part name="departID" type="xsd:string" />
+    <wsdl:part name="sort" type="xsd:string" />
+    <wsdl:part name="dataSource" type="xsd:string" />
+    <wsdl:part name="shortName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="enableUserResponse">
+    <wsdl:part name="enableUserReturn" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="createGroupRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="groupID" type="xsd:string" />
+    <wsdl:part name="typeid" type="xsd:int" />
+    <wsdl:part name="groupName" type="xsd:string" />
+    <wsdl:part name="creater" type="xsd:string" />
+    <wsdl:part name="affiche" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getALlGroupRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="appendGroupMemberRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="groupID" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addEmployeeEx3Response">
+    <wsdl:part name="addEmployeeEx3Return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="disbandGroupResponse">
+    <wsdl:part name="disbandGroupReturn" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getEmployeeStateListRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="departID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addDepartmentRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="departID" type="xsd:string" />
+    <wsdl:part name="departName" type="xsd:string" />
+    <wsdl:part name="parentID" type="xsd:string" />
+    <wsdl:part name="sort" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getEmployeeListRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="departID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="findEmpDepRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="sendSystemMessageResponse">
+    <wsdl:part name="sendSystemMessageReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="moveEmployeeRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+    <wsdl:part name="oldDepartID" type="xsd:string" />
+    <wsdl:part name="newDepartID" type="xsd:string" />
+    <wsdl:part name="newDuty" type="xsd:string" />
+    <wsdl:part name="newSort" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="editEmployeeEx3Request">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+    <wsdl:part name="newRealName" type="xsd:string" />
+    <wsdl:part name="newSex" type="xsd:string" />
+    <wsdl:part name="newPassword" type="xsd:string" />
+    <wsdl:part name="duty" type="xsd:string" />
+    <wsdl:part name="newMobile" type="xsd:string" />
+    <wsdl:part name="newEmail" type="xsd:string" />
+    <wsdl:part name="newDepartID" type="xsd:string" />
+    <wsdl:part name="newSort" type="xsd:string" />
+    <wsdl:part name="newOfficeTel" type="xsd:string" />
+    <wsdl:part name="newCardCode" type="xsd:string" />
+    <wsdl:part name="newLdapDN" type="xsd:string" />
+    <wsdl:part name="newLdapAddress" type="xsd:string" />
+    <wsdl:part name="newHomeAddress" type="xsd:string" />
+    <wsdl:part name="newDataSource" type="xsd:string" />
+    <wsdl:part name="newOfficeFax" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="editEmployeeRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+    <wsdl:part name="newRealName" type="xsd:string" />
+    <wsdl:part name="newSex" type="xsd:string" />
+    <wsdl:part name="newPassword" type="xsd:string" />
+    <wsdl:part name="duty" type="xsd:string" />
+    <wsdl:part name="newMobile" type="xsd:string" />
+    <wsdl:part name="newEmail" type="xsd:string" />
+    <wsdl:part name="newDepartID" type="xsd:string" />
+    <wsdl:part name="newSort" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getEmployeeListResponse">
+    <wsdl:part name="getEmployeeListReturn" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="removeEmployeeRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+    <wsdl:part name="departID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="updateDepartmentNameRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="departID" type="xsd:string" />
+    <wsdl:part name="newDepartName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getClientUserRequest">
+    <wsdl:part name="clientkey" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getAllDepartmentIdsResponse">
+    <wsdl:part name="getAllDepartmentIdsReturn" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="addDomainResponse">
+    <wsdl:part name="addDomainReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addEmployeeExRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+    <wsdl:part name="realName" type="xsd:string" />
+    <wsdl:part name="sex" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+    <wsdl:part name="duty" type="xsd:string" />
+    <wsdl:part name="mobile" type="xsd:string" />
+    <wsdl:part name="email" type="xsd:string" />
+    <wsdl:part name="departID" type="xsd:string" />
+    <wsdl:part name="sort" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="updateUserPicRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+    <wsdl:part name="b64pic" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="moveEmployeeResponse">
+    <wsdl:part name="moveEmployeeReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="appendEmployeeRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+    <wsdl:part name="departID" type="xsd:string" />
+    <wsdl:part name="duty" type="xsd:string" />
+    <wsdl:part name="sort" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="editEmployeeEx3Response">
+    <wsdl:part name="editEmployeeEx3Return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="appendEmployeeResponse">
+    <wsdl:part name="appendEmployeeReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="findDefaultDomainResponse">
+    <wsdl:part name="findDefaultDomainReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getUserPicResponse">
+    <wsdl:part name="getUserPicReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addEmployeeEx2Response">
+    <wsdl:part name="addEmployeeEx2Return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="removeGroupMemberRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="groupID" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="delEmployeeRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="delEmployeeResponse">
+    <wsdl:part name="delEmployeeReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="updatePortalRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+    <wsdl:part name="portalId" type="xsd:string" />
+    <wsdl:part name="count" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getAllLoginUserRequest" />
+  <wsdl:message name="existEmployeeRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getAllEmployeeResponse">
+    <wsdl:part name="getAllEmployeeReturn" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="removeEmployeeResponse">
+    <wsdl:part name="removeEmployeeReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="updatePortal2Response" />
+  <wsdl:message name="updateDepartmentSortRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="departID" type="xsd:string" />
+    <wsdl:part name="newSort" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addDomainRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="existDepartmentRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="departID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="deleteDepEmpMappingRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="editDepartmentRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="departID" type="xsd:string" />
+    <wsdl:part name="newParentID" type="xsd:string" />
+    <wsdl:part name="newDepartName" type="xsd:string" />
+    <wsdl:part name="newSort" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getAllEmployeeLoginNameResponse">
+    <wsdl:part name="getAllEmployeeLoginNameReturn" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="addEmployeeResponse">
+    <wsdl:part name="addEmployeeReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="delDepartmentRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="departID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getEmployeeStateListResponse">
+    <wsdl:part name="getEmployeeStateListReturn" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="addEmployeeEx3Request">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+    <wsdl:part name="realName" type="xsd:string" />
+    <wsdl:part name="sex" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+    <wsdl:part name="duty" type="xsd:string" />
+    <wsdl:part name="mobile" type="xsd:string" />
+    <wsdl:part name="email" type="xsd:string" />
+    <wsdl:part name="departID" type="xsd:string" />
+    <wsdl:part name="sort" type="xsd:string" />
+    <wsdl:part name="dataSource" type="xsd:string" />
+    <wsdl:part name="userType" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getALlGroupResponse">
+    <wsdl:part name="getALlGroupReturn" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="syncAllResponse">
+    <wsdl:part name="syncAllReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getAllLoginUserNoDomainNameResponse">
+    <wsdl:part name="getAllLoginUserNoDomainNameReturn" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="disableUserRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="delDepartmentResponse">
+    <wsdl:part name="delDepartmentReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="updatePortalResponse" />
+  <wsdl:message name="updateDepartmentNameResponse">
+    <wsdl:part name="updateDepartmentNameReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addEmployeeExResponse">
+    <wsdl:part name="addEmployeeExReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getAllEmployeeLoginNameRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="delDomainRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="isLoginRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addEmployeeEx6Request">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+    <wsdl:part name="realName" type="xsd:string" />
+    <wsdl:part name="sex" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+    <wsdl:part name="duty" type="xsd:string" />
+    <wsdl:part name="mobile" type="xsd:string" />
+    <wsdl:part name="email" type="xsd:string" />
+    <wsdl:part name="departID" type="xsd:string" />
+    <wsdl:part name="sort" type="xsd:string" />
+    <wsdl:part name="dataSource" type="xsd:string" />
+    <wsdl:part name="shortName" type="xsd:string" />
+    <wsdl:part name="officeVoice" type="xsd:string" />
+    <wsdl:part name="officeFax" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="editEmployee1Request">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+    <wsdl:part name="newRealName" type="xsd:string" />
+    <wsdl:part name="newSex" type="xsd:string" />
+    <wsdl:part name="newPassword" type="xsd:string" />
+    <wsdl:part name="duty" type="xsd:string" />
+    <wsdl:part name="newMobile" type="xsd:string" />
+    <wsdl:part name="newEmail" type="xsd:string" />
+    <wsdl:part name="newDepartID" type="xsd:string" />
+    <wsdl:part name="newSort" type="xsd:string" />
+    <wsdl:part name="newOfficeTel" type="xsd:string" />
+    <wsdl:part name="newCardCode" type="xsd:string" />
+    <wsdl:part name="newLdapDN" type="xsd:string" />
+    <wsdl:part name="newLdapAddress" type="xsd:string" />
+    <wsdl:part name="newHomeAddress" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="setLevelRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+    <wsdl:part name="level" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="editEmployeeEx2Request">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+    <wsdl:part name="newRealName" type="xsd:string" />
+    <wsdl:part name="newSex" type="xsd:string" />
+    <wsdl:part name="newPassword" type="xsd:string" />
+    <wsdl:part name="duty" type="xsd:string" />
+    <wsdl:part name="newMobile" type="xsd:string" />
+    <wsdl:part name="newEmail" type="xsd:string" />
+    <wsdl:part name="newDepartID" type="xsd:string" />
+    <wsdl:part name="newSort" type="xsd:string" />
+    <wsdl:part name="newOfficeTel" type="xsd:string" />
+    <wsdl:part name="newCardCode" type="xsd:string" />
+    <wsdl:part name="newLdapDN" type="xsd:string" />
+    <wsdl:part name="newLdapAddress" type="xsd:string" />
+    <wsdl:part name="newHomeAddress" type="xsd:string" />
+    <wsdl:part name="newDataSource" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addEmployeeEx6Response">
+    <wsdl:part name="addEmployeeEx6Return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="updateDepartmentSortResponse">
+    <wsdl:part name="updateDepartmentSortReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="updateUserPicResponse" />
+  <wsdl:message name="editEmployeeEx2Response">
+    <wsdl:part name="editEmployeeEx2Return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addEmployeeEx2Request">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+    <wsdl:part name="realName" type="xsd:string" />
+    <wsdl:part name="sex" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+    <wsdl:part name="duty" type="xsd:string" />
+    <wsdl:part name="mobile" type="xsd:string" />
+    <wsdl:part name="email" type="xsd:string" />
+    <wsdl:part name="departID" type="xsd:string" />
+    <wsdl:part name="sort" type="xsd:string" />
+    <wsdl:part name="dataSource" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="enableUserRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addEmployeeRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+    <wsdl:part name="realName" type="xsd:string" />
+    <wsdl:part name="sex" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="createGroupResponse">
+    <wsdl:part name="createGroupReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="syncAllRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="xml" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="isLoginResponse">
+    <wsdl:part name="isLoginReturn" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="existGroupRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="groupID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="updatePortal2Request">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+    <wsdl:part name="portalId" type="xsd:string" />
+    <wsdl:part name="title" type="xsd:string" />
+    <wsdl:part name="tooltip" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getAllDepartmentRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="findEmpDepResponse">
+    <wsdl:part name="findEmpDepReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="updateEmployeeRealNameResponse">
+    <wsdl:part name="updateEmployeeRealNameReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addEmployeeEx4Response">
+    <wsdl:part name="addEmployeeEx4Return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addDepartmentResponse">
+    <wsdl:part name="addDepartmentReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getDepartmentListRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="parentID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="setLevelResponse">
+    <wsdl:part name="setLevelReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getAllEmployeeRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="appendGroupMemberResponse">
+    <wsdl:part name="appendGroupMemberReturn" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="updateEmployeeDutyRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+    <wsdl:part name="newDuty" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getUserPicRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="updateEmployeeDutyResponse">
+    <wsdl:part name="updateEmployeeDutyReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="disableUserResponse">
+    <wsdl:part name="disableUserReturn" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="disbandGroupRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="groupID" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="findDefaultDomainRequest" />
+  <wsdl:message name="addEmployeeEx5Request">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="userName" type="xsd:string" />
+    <wsdl:part name="realName" type="xsd:string" />
+    <wsdl:part name="sex" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+    <wsdl:part name="duty" type="xsd:string" />
+    <wsdl:part name="mobile" type="xsd:string" />
+    <wsdl:part name="email" type="xsd:string" />
+    <wsdl:part name="departID" type="xsd:string" />
+    <wsdl:part name="sort" type="xsd:string" />
+    <wsdl:part name="dataSource" type="xsd:string" />
+    <wsdl:part name="shortName" type="xsd:string" />
+    <wsdl:part name="officeVoice" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="updateDepartmentParentRequest">
+    <wsdl:part name="domainName" type="xsd:string" />
+    <wsdl:part name="departID" type="xsd:string" />
+    <wsdl:part name="newParentID" type="xsd:string" />
+    <wsdl:part name="newSort" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="editEmployeeResponse">
+    <wsdl:part name="editEmployeeReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getAllLoginUserNoDomainNameRequest" />
+  <wsdl:message name="delDomainResponse">
+    <wsdl:part name="delDomainReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="editEmployee1Response">
+    <wsdl:part name="editEmployee1Return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getGroupMemberResponse">
+    <wsdl:part name="getGroupMemberReturn" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="removeGroupMemberResponse" />
+  <wsdl:message name="existDepartmentResponse">
+    <wsdl:part name="existDepartmentReturn" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="existEmployeeResponse">
+    <wsdl:part name="existEmployeeReturn" type="xsd:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getClientUserResponse">
+    <wsdl:part name="getClientUserReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="GenericImpl">
+    <wsdl:operation name="syncAll" parameterOrder="domainName xml">
+      <wsdl:input name="syncAllRequest" message="impl:syncAllRequest" />
+      <wsdl:output name="syncAllResponse" message="impl:syncAllResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="createGroup" parameterOrder="domainName groupID typeid groupName creater affiche">
+      <wsdl:input name="createGroupRequest" message="impl:createGroupRequest" />
+      <wsdl:output name="createGroupResponse" message="impl:createGroupResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setLevel" parameterOrder="domainName userName level">
+      <wsdl:input name="setLevelRequest" message="impl:setLevelRequest" />
+      <wsdl:output name="setLevelResponse" message="impl:setLevelResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addDepartment" parameterOrder="domainName departID departName parentID sort">
+      <wsdl:input name="addDepartmentRequest" message="impl:addDepartmentRequest" />
+      <wsdl:output name="addDepartmentResponse" message="impl:addDepartmentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addEmployeeEx" parameterOrder="domainName userName realName sex password duty mobile email departID sort">
+      <wsdl:input name="addEmployeeExRequest" message="impl:addEmployeeExRequest" />
+      <wsdl:output name="addEmployeeExResponse" message="impl:addEmployeeExResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addEmployeeEx2" parameterOrder="domainName userName realName sex password duty mobile email departID sort dataSource">
+      <wsdl:input name="addEmployeeEx2Request" message="impl:addEmployeeEx2Request" />
+      <wsdl:output name="addEmployeeEx2Response" message="impl:addEmployeeEx2Response" />
+    </wsdl:operation>
+    <wsdl:operation name="addEmployeeEx3" parameterOrder="domainName userName realName sex password duty mobile email departID sort dataSource userType">
+      <wsdl:input name="addEmployeeEx3Request" message="impl:addEmployeeEx3Request" />
+      <wsdl:output name="addEmployeeEx3Response" message="impl:addEmployeeEx3Response" />
+    </wsdl:operation>
+    <wsdl:operation name="addEmployeeEx4" parameterOrder="domainName userName realName sex password duty mobile email departID sort dataSource shortName">
+      <wsdl:input name="addEmployeeEx4Request" message="impl:addEmployeeEx4Request" />
+      <wsdl:output name="addEmployeeEx4Response" message="impl:addEmployeeEx4Response" />
+    </wsdl:operation>
+    <wsdl:operation name="addEmployeeEx5" parameterOrder="domainName userName realName sex password duty mobile email departID sort dataSource shortName officeVoice">
+      <wsdl:input name="addEmployeeEx5Request" message="impl:addEmployeeEx5Request" />
+      <wsdl:output name="addEmployeeEx5Response" message="impl:addEmployeeEx5Response" />
+    </wsdl:operation>
+    <wsdl:operation name="addEmployeeEx6" parameterOrder="domainName userName realName sex password duty mobile email departID sort dataSource shortName officeVoice officeFax">
+      <wsdl:input name="addEmployeeEx6Request" message="impl:addEmployeeEx6Request" />
+      <wsdl:output name="addEmployeeEx6Response" message="impl:addEmployeeEx6Response" />
+    </wsdl:operation>
+    <wsdl:operation name="editEmployeeEx3" parameterOrder="domainName userName newRealName newSex newPassword duty newMobile newEmail newDepartID newSort newOfficeTel newCardCode newLdapDN newLdapAddress newHomeAddress newDataSource newOfficeFax">
+      <wsdl:input name="editEmployeeEx3Request" message="impl:editEmployeeEx3Request" />
+      <wsdl:output name="editEmployeeEx3Response" message="impl:editEmployeeEx3Response" />
+    </wsdl:operation>
+    <wsdl:operation name="appendEmployee" parameterOrder="domainName userName departID duty sort">
+      <wsdl:input name="appendEmployeeRequest" message="impl:appendEmployeeRequest" />
+      <wsdl:output name="appendEmployeeResponse" message="impl:appendEmployeeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="appendGroupMember" parameterOrder="domainName groupID userName">
+      <wsdl:input name="appendGroupMemberRequest" message="impl:appendGroupMemberRequest" />
+      <wsdl:output name="appendGroupMemberResponse" message="impl:appendGroupMemberResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="delDepartment" parameterOrder="domainName departID">
+      <wsdl:input name="delDepartmentRequest" message="impl:delDepartmentRequest" />
+      <wsdl:output name="delDepartmentResponse" message="impl:delDepartmentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteDepEmpMapping" parameterOrder="domainName userName">
+      <wsdl:input name="deleteDepEmpMappingRequest" message="impl:deleteDepEmpMappingRequest" />
+      <wsdl:output name="deleteDepEmpMappingResponse" message="impl:deleteDepEmpMappingResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="editDepartment" parameterOrder="domainName departID newParentID newDepartName newSort">
+      <wsdl:input name="editDepartmentRequest" message="impl:editDepartmentRequest" />
+      <wsdl:output name="editDepartmentResponse" message="impl:editDepartmentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="editEmployee1" parameterOrder="domainName userName newRealName newSex newPassword duty newMobile newEmail newDepartID newSort newOfficeTel newCardCode newLdapDN newLdapAddress newHomeAddress">
+      <wsdl:input name="editEmployee1Request" message="impl:editEmployee1Request" />
+      <wsdl:output name="editEmployee1Response" message="impl:editEmployee1Response" />
+    </wsdl:operation>
+    <wsdl:operation name="editEmployeeEx2" parameterOrder="domainName userName newRealName newSex newPassword duty newMobile newEmail newDepartID newSort newOfficeTel newCardCode newLdapDN newLdapAddress newHomeAddress newDataSource">
+      <wsdl:input name="editEmployeeEx2Request" message="impl:editEmployeeEx2Request" />
+      <wsdl:output name="editEmployeeEx2Response" message="impl:editEmployeeEx2Response" />
+    </wsdl:operation>
+    <wsdl:operation name="existDepartment" parameterOrder="domainName departID">
+      <wsdl:input name="existDepartmentRequest" message="impl:existDepartmentRequest" />
+      <wsdl:output name="existDepartmentResponse" message="impl:existDepartmentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="existEmployee" parameterOrder="domainName userName">
+      <wsdl:input name="existEmployeeRequest" message="impl:existEmployeeRequest" />
+      <wsdl:output name="existEmployeeResponse" message="impl:existEmployeeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="findDefaultDomain">
+      <wsdl:input name="findDefaultDomainRequest" message="impl:findDefaultDomainRequest" />
+      <wsdl:output name="findDefaultDomainResponse" message="impl:findDefaultDomainResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllDepartment" parameterOrder="domainName">
+      <wsdl:input name="getAllDepartmentRequest" message="impl:getAllDepartmentRequest" />
+      <wsdl:output name="getAllDepartmentResponse" message="impl:getAllDepartmentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllDepartmentIds" parameterOrder="domainName">
+      <wsdl:input name="getAllDepartmentIdsRequest" message="impl:getAllDepartmentIdsRequest" />
+      <wsdl:output name="getAllDepartmentIdsResponse" message="impl:getAllDepartmentIdsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllEmployee" parameterOrder="domainName">
+      <wsdl:input name="getAllEmployeeRequest" message="impl:getAllEmployeeRequest" />
+      <wsdl:output name="getAllEmployeeResponse" message="impl:getAllEmployeeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllLoginUser">
+      <wsdl:input name="getAllLoginUserRequest" message="impl:getAllLoginUserRequest" />
+      <wsdl:output name="getAllLoginUserResponse" message="impl:getAllLoginUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getClientUser" parameterOrder="clientkey">
+      <wsdl:input name="getClientUserRequest" message="impl:getClientUserRequest" />
+      <wsdl:output name="getClientUserResponse" message="impl:getClientUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDepartmentList" parameterOrder="domainName parentID">
+      <wsdl:input name="getDepartmentListRequest" message="impl:getDepartmentListRequest" />
+      <wsdl:output name="getDepartmentListResponse" message="impl:getDepartmentListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeList" parameterOrder="domainName departID">
+      <wsdl:input name="getEmployeeListRequest" message="impl:getEmployeeListRequest" />
+      <wsdl:output name="getEmployeeListResponse" message="impl:getEmployeeListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeStateList" parameterOrder="domainName departID">
+      <wsdl:input name="getEmployeeStateListRequest" message="impl:getEmployeeStateListRequest" />
+      <wsdl:output name="getEmployeeStateListResponse" message="impl:getEmployeeStateListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getGroupMember" parameterOrder="domainName groupID">
+      <wsdl:input name="getGroupMemberRequest" message="impl:getGroupMemberRequest" />
+      <wsdl:output name="getGroupMemberResponse" message="impl:getGroupMemberResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="removeEmployee" parameterOrder="domainName userName departID">
+      <wsdl:input name="removeEmployeeRequest" message="impl:removeEmployeeRequest" />
+      <wsdl:output name="removeEmployeeResponse" message="impl:removeEmployeeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="removeGroupMember" parameterOrder="domainName groupID userName">
+      <wsdl:input name="removeGroupMemberRequest" message="impl:removeGroupMemberRequest" />
+      <wsdl:output name="removeGroupMemberResponse" message="impl:removeGroupMemberResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="sendSystemMessage" parameterOrder="domainName userName title content type level">
+      <wsdl:input name="sendSystemMessageRequest" message="impl:sendSystemMessageRequest" />
+      <wsdl:output name="sendSystemMessageResponse" message="impl:sendSystemMessageResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateDepartmentName" parameterOrder="domainName departID newDepartName">
+      <wsdl:input name="updateDepartmentNameRequest" message="impl:updateDepartmentNameRequest" />
+      <wsdl:output name="updateDepartmentNameResponse" message="impl:updateDepartmentNameResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateDepartmentSort" parameterOrder="domainName departID newSort">
+      <wsdl:input name="updateDepartmentSortRequest" message="impl:updateDepartmentSortRequest" />
+      <wsdl:output name="updateDepartmentSortResponse" message="impl:updateDepartmentSortResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateEmployeeDuty" parameterOrder="domainName userName newDuty">
+      <wsdl:input name="updateEmployeeDutyRequest" message="impl:updateEmployeeDutyRequest" />
+      <wsdl:output name="updateEmployeeDutyResponse" message="impl:updateEmployeeDutyResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updatePortal2" parameterOrder="domainName userName portalId title tooltip">
+      <wsdl:input name="updatePortal2Request" message="impl:updatePortal2Request" />
+      <wsdl:output name="updatePortal2Response" message="impl:updatePortal2Response" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUserPic" parameterOrder="domainName userName b64pic">
+      <wsdl:input name="updateUserPicRequest" message="impl:updateUserPicRequest" />
+      <wsdl:output name="updateUserPicResponse" message="impl:updateUserPicResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addDomain" parameterOrder="domainName">
+      <wsdl:input name="addDomainRequest" message="impl:addDomainRequest" />
+      <wsdl:output name="addDomainResponse" message="impl:addDomainResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addEmployee" parameterOrder="domainName userName realName sex password">
+      <wsdl:input name="addEmployeeRequest" message="impl:addEmployeeRequest" />
+      <wsdl:output name="addEmployeeResponse" message="impl:addEmployeeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="delDomain" parameterOrder="domainName">
+      <wsdl:input name="delDomainRequest" message="impl:delDomainRequest" />
+      <wsdl:output name="delDomainResponse" message="impl:delDomainResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="delEmployee" parameterOrder="domainName userName">
+      <wsdl:input name="delEmployeeRequest" message="impl:delEmployeeRequest" />
+      <wsdl:output name="delEmployeeResponse" message="impl:delEmployeeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="disableUser" parameterOrder="domainName userName">
+      <wsdl:input name="disableUserRequest" message="impl:disableUserRequest" />
+      <wsdl:output name="disableUserResponse" message="impl:disableUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="editEmployee" parameterOrder="domainName userName newRealName newSex newPassword duty newMobile newEmail newDepartID newSort">
+      <wsdl:input name="editEmployeeRequest" message="impl:editEmployeeRequest" />
+      <wsdl:output name="editEmployeeResponse" message="impl:editEmployeeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="enableUser" parameterOrder="domainName userName">
+      <wsdl:input name="enableUserRequest" message="impl:enableUserRequest" />
+      <wsdl:output name="enableUserResponse" message="impl:enableUserResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="existGroup" parameterOrder="domainName groupID">
+      <wsdl:input name="existGroupRequest" message="impl:existGroupRequest" />
+      <wsdl:output name="existGroupResponse" message="impl:existGroupResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="findEmpDep" parameterOrder="domainName userName">
+      <wsdl:input name="findEmpDepRequest" message="impl:findEmpDepRequest" />
+      <wsdl:output name="findEmpDepResponse" message="impl:findEmpDepResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getALlGroup" parameterOrder="domainName">
+      <wsdl:input name="getALlGroupRequest" message="impl:getALlGroupRequest" />
+      <wsdl:output name="getALlGroupResponse" message="impl:getALlGroupResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserPic" parameterOrder="domainName userName">
+      <wsdl:input name="getUserPicRequest" message="impl:getUserPicRequest" />
+      <wsdl:output name="getUserPicResponse" message="impl:getUserPicResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="isLogin" parameterOrder="domainName userName">
+      <wsdl:input name="isLoginRequest" message="impl:isLoginRequest" />
+      <wsdl:output name="isLoginResponse" message="impl:isLoginResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="moveEmployee" parameterOrder="domainName userName oldDepartID newDepartID newDuty newSort">
+      <wsdl:input name="moveEmployeeRequest" message="impl:moveEmployeeRequest" />
+      <wsdl:output name="moveEmployeeResponse" message="impl:moveEmployeeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updatePortal" parameterOrder="domainName userName portalId count">
+      <wsdl:input name="updatePortalRequest" message="impl:updatePortalRequest" />
+      <wsdl:output name="updatePortalResponse" message="impl:updatePortalResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllEmployeeLoginName" parameterOrder="domainName">
+      <wsdl:input name="getAllEmployeeLoginNameRequest" message="impl:getAllEmployeeLoginNameRequest" />
+      <wsdl:output name="getAllEmployeeLoginNameResponse" message="impl:getAllEmployeeLoginNameResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllLoginUserNoDomainName">
+      <wsdl:input name="getAllLoginUserNoDomainNameRequest" message="impl:getAllLoginUserNoDomainNameRequest" />
+      <wsdl:output name="getAllLoginUserNoDomainNameResponse" message="impl:getAllLoginUserNoDomainNameResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateDepartmentParent" parameterOrder="domainName departID newParentID newSort">
+      <wsdl:input name="updateDepartmentParentRequest" message="impl:updateDepartmentParentRequest" />
+      <wsdl:output name="updateDepartmentParentResponse" message="impl:updateDepartmentParentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateEmployeeRealName" parameterOrder="domainName userName newRealName">
+      <wsdl:input name="updateEmployeeRealNameRequest" message="impl:updateEmployeeRealNameRequest" />
+      <wsdl:output name="updateEmployeeRealNameResponse" message="impl:updateEmployeeRealNameResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="disbandGroup" parameterOrder="domainName groupID">
+      <wsdl:input name="disbandGroupRequest" message="impl:disbandGroupRequest" />
+      <wsdl:output name="disbandGroupResponse" message="impl:disbandGroupResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GenericSoapBinding" type="impl:GenericImpl">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="syncAll">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="syncAllRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="syncAllResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createGroup">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="createGroupRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="createGroupResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setLevel">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="setLevelRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="setLevelResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addDepartment">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="addDepartmentRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="addDepartmentResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addEmployeeEx">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="addEmployeeExRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="addEmployeeExResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addEmployeeEx2">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="addEmployeeEx2Request">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="addEmployeeEx2Response">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addEmployeeEx3">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="addEmployeeEx3Request">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="addEmployeeEx3Response">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addEmployeeEx4">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="addEmployeeEx4Request">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="addEmployeeEx4Response">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addEmployeeEx5">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="addEmployeeEx5Request">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="addEmployeeEx5Response">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addEmployeeEx6">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="addEmployeeEx6Request">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="addEmployeeEx6Response">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editEmployeeEx3">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="editEmployeeEx3Request">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="editEmployeeEx3Response">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="appendEmployee">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="appendEmployeeRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="appendEmployeeResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="appendGroupMember">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="appendGroupMemberRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="appendGroupMemberResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delDepartment">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="delDepartmentRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="delDepartmentResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteDepEmpMapping">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="deleteDepEmpMappingRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="deleteDepEmpMappingResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editDepartment">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="editDepartmentRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="editDepartmentResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editEmployee1">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="editEmployee1Request">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="editEmployee1Response">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editEmployeeEx2">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="editEmployeeEx2Request">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="editEmployeeEx2Response">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="existDepartment">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="existDepartmentRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="existDepartmentResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="existEmployee">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="existEmployeeRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="existEmployeeResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findDefaultDomain">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="findDefaultDomainRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="findDefaultDomainResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllDepartment">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllDepartmentRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getAllDepartmentResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllDepartmentIds">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllDepartmentIdsRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getAllDepartmentIdsResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllEmployee">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllEmployeeRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getAllEmployeeResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllLoginUser">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllLoginUserRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getAllLoginUserResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClientUser">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getClientUserRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getClientUserResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDepartmentList">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getDepartmentListRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getDepartmentListResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeList">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getEmployeeListRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getEmployeeListResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEmployeeStateList">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getEmployeeStateListRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getEmployeeStateListResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGroupMember">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getGroupMemberRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getGroupMemberResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeEmployee">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="removeEmployeeRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="removeEmployeeResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeGroupMember">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="removeGroupMemberRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="removeGroupMemberResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendSystemMessage">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="sendSystemMessageRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="sendSystemMessageResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDepartmentName">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updateDepartmentNameRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="updateDepartmentNameResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDepartmentSort">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updateDepartmentSortRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="updateDepartmentSortResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateEmployeeDuty">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updateEmployeeDutyRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="updateEmployeeDutyResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePortal2">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updatePortal2Request">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="updatePortal2Response">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUserPic">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updateUserPicRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="updateUserPicResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addDomain">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="addDomainRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="addDomainResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addEmployee">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="addEmployeeRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="addEmployeeResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delDomain">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="delDomainRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="delDomainResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delEmployee">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="delEmployeeRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="delEmployeeResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="disableUser">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="disableUserRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="disableUserResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editEmployee">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="editEmployeeRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="editEmployeeResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enableUser">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="enableUserRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="enableUserResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="existGroup">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="existGroupRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="existGroupResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findEmpDep">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="findEmpDepRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="findEmpDepResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getALlGroup">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getALlGroupRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getALlGroupResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserPic">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getUserPicRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getUserPicResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isLogin">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="isLoginRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="isLoginResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="moveEmployee">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="moveEmployeeRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="moveEmployeeResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePortal">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updatePortalRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="updatePortalResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllEmployeeLoginName">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllEmployeeLoginNameRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getAllEmployeeLoginNameResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllLoginUserNoDomainName">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getAllLoginUserNoDomainNameRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getAllLoginUserNoDomainNameResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDepartmentParent">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updateDepartmentParentRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="updateDepartmentParentResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateEmployeeRealName">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="updateEmployeeRealNameRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="updateEmployeeRealNameResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="disbandGroup">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="disbandGroupRequest">
+        <wsdlsoap:body use="encoded" namespace="http://serviceImpl.webservice6.web.polabear.jzxl.com.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="disbandGroupResponse">
+        <wsdlsoap:body use="encoded" namespace="http://webservice.extsoft.net" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GenericImplService">
+    <wsdl:port name="Generic" binding="impl:GenericSoapBinding">
+      <wsdlsoap:address location="http://www.guotsingoa.com:9090/webservice6/services/Generic" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

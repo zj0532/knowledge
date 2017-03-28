@@ -1,0 +1,403 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5 diagram editor</title>
+
+    <meta charset="UTF-8">
+
+    <script type="text/javascript" src="../Scripts/diagramo/assets/javascript/dropdownmenu.js"></script>
+
+    <link rel="stylesheet" media="screen" type="text/css" href="../Scripts/diagramo/assets/css/style.css" />
+    <link rel="stylesheet" media="screen" type="text/css" href="../Scripts/diagramo/assets/css/minimap.css" />
+
+    <script type="text/javascript" src="../Scripts/diagramo/assets/javascript/json2.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/assets/javascript/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/assets/javascript/ajaxfileupload.js"></script>
+
+    <link type='text/css' href='../Scripts/diagramo/assets/simplemodal/css/diagramo.css' rel='stylesheet' media='screen' />
+
+    <link rel="stylesheet" media="screen" type="text/css" href="../Scripts/diagramo/assets/css/colorPicker_new.css" />
+
+    <script type="text/javascript" src="../Scripts/diagramo/assets/simplemodal/js/jquery.simplemodal.js"></script>
+
+    <script type="text/javascript">
+        "use strict";
+        /*Option 1:
+         *We can use window.location like this:
+         * url = window.location.protocol + window.location.hostname + ":" + window.location.port + ....
+         * @see http://www.w3schools.com/jsref/obj_location.asp
+         *
+         * Option 2:
+         * Use http://code.google.com/p/js-uri/
+         **/
+        var appURL = 'http://diagramo.com';
+        var figureSetsURL = appURL + "/Scripts/diagramo/lib/sets";
+        var insertImageURL = appURL + "/Scripts/diagramo/data/import/";
+
+        function showImport() {
+            //alert("ok");
+            var r = confirm("Current diagram will be deleted. Are you sure?");
+            if (r === true) {
+                $("#import-dialog").modal(); // jQuery object; this demo
+            }
+        }
+    </script>
+
+    <script type="text/javascript" src="../Scripts/diagramo/lib/dashed.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/canvasprops.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/style.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/primitives.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/ImageFrame.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/matrix.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/util.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/key.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/groups.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/stack.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/connections.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/connectionManagers.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/handles.js"></script>
+
+
+    <script type="text/javascript" src="../Scripts/diagramo/lib/builder.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/text.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/log.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/text.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/browserReady.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/containers.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/importer.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/main.js"></script>
+
+    <script type="text/javascript" src="../Scripts/diagramo/lib/sets/basic/basic.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/sets/experimental/experimental.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/sets/network/network.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/sets/secondary/secondary.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/sets/statemachine/statemachine.js"></script>
+
+    <script type="text/javascript" src="../Scripts/diagramo/lib/minimap.js"></script>
+
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/History.js"></script>
+
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/FigureCreateCommand.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/FigureCloneCommand.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/FigureTranslateCommand.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/FigureRotateCommand.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/FigureScaleCommand.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/FigureZOrderCommand.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/FigureDeleteCommand.js"></script>
+
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/GroupRotateCommand.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/GroupScaleCommand.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/GroupCreateCommand.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/GroupCloneCommand.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/GroupDestroyCommand.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/GroupDeleteCommand.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/GroupTranslateCommand.js"></script>
+
+
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/ContainerCreateCommand.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/ContainerDeleteCommand.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/ContainerTranslateCommand.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/ContainerScaleCommand.js"></script>
+
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/ConnectorCreateCommand.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/ConnectorDeleteCommand.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/ConnectorAlterCommand.js"></script>
+
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/ShapeChangePropertyCommand.js"></script>
+
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/CanvasChangeColorCommand.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/CanvasChangeSizeCommand.js"></script>
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/CanvasFitCommand.js"></script>
+
+    <script type="text/javascript" src="../Scripts/diagramo/lib/commands/InsertedImageFigureCreateCommand.js"></script>
+
+
+    <script type="text/javascript" src="../Scripts/diagramo/assets/javascript/colorPicker_new.js"></script>
+
+
+    <!--[if IE]>
+    <script src="../Scripts/diagramo/assets/javascript/excanvas.js"></script>
+    <![endif]-->
+
+</head>
+<body onload="init('');" id="body">
+
+    <div id="actions" style="font-size:12px; padding:0px;">
+        <!--
+        <a style="text-decoration: none;" href="#" onclick="return save();" title="Save diagram (Ctrl-S)"><img src="assets/images/icon_save.jpg" border="0" width="16" height="16" /></a>
+        <a style="text-decoration: none;" href="./myDiagrams.php" title="Open diagram"><img src="assets/images/icon_open.jpg" border="0" width="16" height="16" /></a>
+        -->
+
+        <a href="javascript:action('connector-straight');" title="Straight connector">连接线（直线）</a>
+        <a href="javascript:getCanvasFigures()">获取所有图形</a>
+
+        x<input type="text" id="txbMouseX" />
+        y<input type="text" id="txbMouseY" />
+        <!--
+        <img class="separator" src="assets/images/toolbar_separator.gif" border="0" width="1" height="16" />
+
+        <a href="javascript:action('connector-jagged');" title="Jagged connector"><img src="assets/images/icon_connector_jagged.gif" border="0" /></a>
+
+        <img class="separator" src="assets/images/toolbar_separator.gif" border="0" width="1" height="16" />
+
+        <a href="javascript:action('connector-organic');" title="Organic connector"><img src="assets/images/icon_connector_organic.gif" border="0" alt="Organic" /></a>
+
+        <img class="separator" src="assets/images/toolbar_separator.gif" border="0" width="1" height="16" />
+
+        <a href="javascript:action('container');" title="Container (Experimental)"><img src="assets/images/container.png" border="0" alt="Container" /></a>
+
+        <img class="separator" src="assets/images/toolbar_separator.gif" border="0" width="1" height="16" />
+
+        <input type="checkbox" onclick="showGrid();" id="gridCheckbox" title="Show grid" /> <span class="toolbarText">Show grid</span>
+
+        <img class="separator" src="assets/images/toolbar_separator.gif" border="0" width="1" height="16" />
+
+        <input type="checkbox" onclick="snapToGrid();" id="snapCheckbox" title="Snap elements to grid" /> <span class="toolbarText">Snap to grid</span>
+
+        <img class="separator" src="assets/images/toolbar_separator.gif" border="0" width="1" height="16" />
+
+        <a href="javascript:action('front');" title="Move to front"><img src="assets/images/icon_front.gif" border="0" /></a>
+
+        <img class="separator" src="assets/images/toolbar_separator.gif" border="0" width="1" height="16" />
+
+        <a href="javascript:action('back');" title="Move to back"><img src="assets/images/icon_back.gif" border="0" /></a>
+
+        <img class="separator" src="assets/images/toolbar_separator.gif" border="0" width="1" height="16" />
+
+        <a href="javascript:action('moveforward');" title="Move (one level) to front"><img src="assets/images/icon_forward.gif" border="0" /></a>
+
+        <img class="separator" src="assets/images/toolbar_separator.gif" border="0" width="1" height="16" />
+
+        <a href="javascript:action('moveback');" title="Move (one level) back"><img src="assets/images/icon_backward.gif" border="0" /></a>
+
+
+
+        <img class="separator" src="assets/images/toolbar_separator.gif" border="0" width="1" height="16" />
+        <a href="javascript:action('group');" title="Group (Ctrl-G)"><img src="assets/images/group.gif" border="0" /></a>
+
+        <img class="separator" src="assets/images/toolbar_separator.gif" border="0" width="1" height="16" />
+        <a href="javascript:action('ungroup');" title="Ungroup (Ctrl-U)"><img src="assets/images/ungroup.gif" border="0" /></a>
+
+        <img class="separator" src="assets/images/toolbar_separator.gif" border="0" width="1" height="16" />
+
+        <a href="javascript:createFigure(figure_Text, 'assets/images/text.gif');" title="Add text"><img src="assets/images/text.gif" border="0" height="16" /></a>
+        <img class="separator" src="assets/images/toolbar_separator.gif" border="0" width="1" height="16" />
+
+        <a href="javascript:showInsertImageDialog();" title="Add image"><img src="/editor/assets/images/image.gif" border="0" height="16" alt="Image" /></a>
+        <img class="separator" src="assets/images/toolbar_separator.gif" border="0" width="1" height="16" />
+
+        <a href="javascript:action('undo');" title="Undo (Ctrl-Z)"><img src="assets/images/arrow_undo.png" border="0" /></a>
+            -->
+        <script type="text/javascript">
+            //STACK.figures
+            
+            function getCanvasFigures() {
+
+                // 获取所有图形
+                //console.info(STACK.figures);
+
+                // 获取所有点（点存在与图形、连接线中）
+                //console.info(CONNECTOR_MANAGER.connectionPoints);
+
+                // 获取选中的连接线
+                //console.info(CONNECTOR_MANAGER.connectorGetById(selectedConnectorId));
+
+                // 获取选中的连接线
+                var obj1 = CONNECTOR_MANAGER.connectionPointGetByParentAndCoordinates()
+                //console.info(obj1);
+
+                var obj2 = CONNECTOR_MANAGER.connectorGetById(obj1.id);
+                //console.info(obj2);
+            }
+        </script>
+        <!--
+        <img class="separator" src="assets/images/toolbar_separator.gif" border="0" width="1" height="16"/>
+        <a href="javascript:action('redo');" title="Redo (Ctrl-Y)"><img src="assets/images/arrow_redo.png" border="0"/></a>
+        -->
+        <!-- TODO: From Janis: we have to create a nice icon for duplicate, currently this is the only command without an icon -->
+        <!--
+        <a href="javascript:action('duplicate');">Copy (Ctrl-D)</a>
+        -->
+        <!--
+        <input type="text" id="output" />
+        <img style="vertical-align:middle;" src=".../Scripts/diagramo/assets/images/toolbar_separator.gif" border="0" width="1" height="16"/>
+        <a href="javascript:action('duplicate');">Copy</a>
+        <img style="vertical-align:middle;" src=".../Scripts/diagramo/assets/images/toolbar_separator.gif" border="0" width="1" height="16"/>
+        <a href="javascript:action('group');">Group</a>
+        <img style="vertical-align:middle;" src=".../Scripts/diagramo/assets/images/toolbar_separator.gif" border="0" width="1" height="16"/>
+        <a href="javascript:action('ungroup');">Ungroup</a>
+        -->
+    </div>
+
+
+    <div id="editor">
+        <div id="figures">
+            <!-- 这里用于初始化其他的元素，目前用不到，暂时注掉
+            <select style="width: 120px;" onchange="setFigureSet(this.options[this.selectedIndex].value);">
+                <script>
+                    "use strict";
+                    for (var setName in figureSets) {
+                        var set = figureSets[setName];
+                        document.write('<option value="' + setName + '">' + set['name'] + '</option>');
+                    }
+                </script>
+            </select>-->
+
+            <script type="text/javascript">
+                "use strict";
+                /**Builds the figure panel*/
+                function buildPanel() {
+                    //var first = true;
+                    var firstPanel = true;
+                    //action('connector-straight');
+
+                    // 获取控件大类
+                    for (var setName in figureSets) {
+
+                        var set = figureSets[setName];
+
+                        // creates the div that will hold the figures
+                        var eSetDiv = document.createElement('div');
+                        eSetDiv.setAttribute('id', setName);
+
+                        //eSetDiv.style.border = '1px solid green';
+                        if (firstPanel) {
+                            firstPanel = false;
+                        }
+                        else {
+                            eSetDiv.style.display = 'none';
+                        }
+                        document.getElementById('figures').appendChild(eSetDiv);
+
+                        //add figures to the div
+                        for (var figure in set['figures']) {
+                            figure = set['figures'][figure];
+                            //console.info(figure);
+                            var figureFunctionName = 'figure_' + figure.figureFunction;
+                            var figureThumbURL = 'lib/sets/' + setName + '/' + figure.image;
+
+                            var eFigure = document.createElement('img');
+                            eFigure.setAttribute('src', figureThumbURL);
+
+                            eFigure.addEventListener('mousedown', function (figureFunction, figureThumbURL) {
+                                return function (evt) {
+                                    evt.preventDefault();
+                                    //Log.info("editor.php:buildPanel: figureFunctionName:" + figureFunctionName);
+
+                                    /*we need to search for function in window namespace (as all that we have is a simple string)**/
+                                    createFigure(window[figureFunction], figureThumbURL);
+                                };
+                            }(figureFunctionName, figureThumbURL)
+                            , false);
+
+                            //in case use drops the figure
+                            eFigure.addEventListener('mouseup', function () {
+                                createFigureFunction = null;
+                                selectedFigureThumb = null;
+                                state = STATE_NONE;
+                            }
+                            , false);
+
+                            eFigure.style.cursor = 'pointer';
+                            eFigure.style.marginRight = '5px';
+                            eFigure.style.marginTop = '2px';
+
+                            eSetDiv.appendChild(eFigure);
+                        }
+                    }
+                }
+
+                // 这里生成控件面板
+                buildPanel();
+
+            </script>
+            <div style="display:none;" id="more">
+                More sets of figures <a href="http://diagramo.com/figures.php" target="_new">here</a>
+            </div>
+        </div>
+
+        <!--THE canvas-->
+        <div style="width: 100%">
+            <div id="container">
+                <canvas id="a" width="800" height="600">
+                    Your browser does not support HTML5. Please upgrade your browser to any modern version.
+                </canvas>
+                <div id="text-editor"></div>
+                <div id="text-editor-tools"></div>
+            </div>
+        </div>
+
+        <!--Right panel-->
+        <div id="right">
+            <center>
+                <div id="minimap">
+                </div>
+            </center>
+            <div style="overflow: scroll;" id="edit">
+            </div>
+        </div>
+
+    </div>
+
+    <!--The import panel-->
+    <div id="import-dialog" style="background-color: white; display: none; margin-top: auto; margin-bottom: auto;">
+        <form action="./common/controller.php" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="action" value="importDiagramExe" />
+            <h2>Import Diagramo file </h2>
+            <p />
+            <input type="file" name="diagramFile" id="diagramFile" />
+            <p />
+            <input type="image" src="../Scripts/diagramo/assets/images/import.gif" />
+        </form>
+    </div>
+
+    <!--Insert Image dialog content-->
+    <div id="insert-image-dialog">
+        <h2>Insert Image</h2>
+        <form action="./common/controller.php" method="POST" target="upload_target" enctype="multipart/form-data">
+            <input type="hidden" name="action" value="insertImage" />
+            <div class="insert-image-line">
+                <input type="radio" name="image-group" value="URL" checked>
+                <label>From URL:</label>
+                <input type="text" class="url-input" name="imageURL" id="imageURL" />
+            </div>
+            <div class="insert-image-line">
+                <input type="radio" name="image-group" value="Upload">
+                <label>Upload:</label>
+                <input type="file" class="right-offset" name="imageFile" id="imageFile" />
+            </div>
+            <div class="insert-image-line">
+                <input type="radio" name="image-group" value="Reuse" id="insert-image-reuse-group">
+                <label>Reuse:</label>
+                <select id="insert-image-reuse" name="reuseImageFile"></select>
+            </div>
+            <div id="upload-image-error">
+            </div>
+            <div class="submit-container">
+                <input type="submit" value="Insert" />
+            </div>
+        </form>
+    </div>
+
+    <!--Insert Image hidden iframe-->
+    <iframe id="upload_target" name="upload_target" style="width:0;height:0;border:0px;"></iframe>
+
+    <script type="text/javascript">
+        "use strict";
+        function loadFill(check) {
+            if (check.checked === true) {
+                if ($('#colorpickerHolder3').css('display') === 'none') {
+                    $('#colorSelector3').click();
+                }
+            }
+            else {
+                if ($('#colorpickerHolder3').css('display') === 'block') {
+                    $('#colorSelector3').click();
+                }
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

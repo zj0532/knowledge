@@ -1,0 +1,99 @@
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Test.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Test.pdb
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Jurassic.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\LitJson.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Common.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Core.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Data.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Model.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\log4net.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\NPOI.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Quartz.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Newtonsoft.Json.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Interop.MSScriptControl.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Common.Logging.Core.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Common.Logging.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Common.pdb
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Core.pdb
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Data.pdb
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Model.pdb
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Jurassic.pdb
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\log4net.xml
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Quartz.pdb
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Quartz.xml
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Newtonsoft.Json.xml
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Common.Logging.Core.pdb
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Common.Logging.Core.xml
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Common.Logging.pdb
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Common.Logging.xml
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\obj\Debug\Pactera.Test.csprojResolveAssemblyReference.cache
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\obj\Debug\Interop.MSScriptControl.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\obj\Debug\Pactera.Test.csproj.ResolveComReference.cache
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\obj\Debug\Pactera.Test.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Test\obj\Debug\Pactera.Test.pdb
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Test.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Test.pdb
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\LitJson.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Common.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Core.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Data.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Model.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\log4net.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\NPOI.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Quartz.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Newtonsoft.Json.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Interop.MSScriptControl.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Oracle.ManagedDataAccess.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Common.Logging.Core.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Common.Logging.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Common.pdb
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Core.pdb
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Data.pdb
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Model.pdb
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\log4net.xml
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Quartz.pdb
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Quartz.xml
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Newtonsoft.Json.xml
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Common.Logging.Core.pdb
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Common.Logging.Core.xml
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Common.Logging.pdb
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Common.Logging.xml
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\obj\Debug\Pactera.Test.csprojResolveAssemblyReference.cache
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\obj\Debug\Interop.MSScriptControl.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\obj\Debug\Pactera.Test.csproj.ResolveComReference.cache
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\obj\Debug\Pactera.Test.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\obj\Debug\Pactera.Test.pdb
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Test.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Test.pdb
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\LitJson.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Common.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Core.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Data.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Model.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\log4net.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\NPOI.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Quartz.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Interop.MSScriptControl.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Oracle.ManagedDataAccess.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Common.Logging.Core.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Common.Logging.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Common.pdb
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Core.pdb
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Data.pdb
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Pactera.Model.pdb
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\log4net.xml
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Quartz.pdb
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Quartz.xml
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Common.Logging.Core.pdb
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Common.Logging.Core.xml
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Common.Logging.pdb
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\bin\Debug\Common.Logging.xml
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\obj\Debug\Pactera.Test.csprojResolveAssemblyReference.cache
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\obj\Debug\Interop.MSScriptControl.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\obj\Debug\Pactera.Test.csproj.ResolveComReference.cache
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\obj\Debug\Pactera.Test.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Test\obj\Debug\Pactera.Test.pdb

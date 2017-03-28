@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow FlowCode="TenderEvaluation" Status="0" Name="封标审核" Description="封标审核审批流程" Version="">
+
+  <!-- 开始 -->
+  <Step StepNumber="1" Description="开始" ParentNumber="0">
+    <Action ActionType="Start" />
+  </Step>
+
+  <!-- 审批 - 分公司领导 -->
+  <Step StepNumber="2" Description="市场部经理" ParentNumber="1">
+    <Action ActionType="Approve">
+      <Approve PersonType="Role">1</Approve>
+    </Action>
+  </Step>
+  <Step StepNumber="3" Description="审批通过" ParentNumber="2">
+    <Action ActionType="Judge">
+      <Condition Type="Approve">1</Condition>
+    </Action>
+  </Step>
+  <Step StepNumber="4" Description="审批不通过" ParentNumber="2">
+    <Action ActionType="Judge">
+      <Condition Type="Approve">0</Condition>
+    </Action>
+  </Step>
+
+  <!-- 审批 - 集团市场部审批 -->
+  <Step StepNumber="5" Description="集团市场部审批" ParentNumber="3">
+    <Action ActionType="Approve">
+      <Approve PersonType="Role">2</Approve>
+    </Action>
+  </Step>
+  <Step StepNumber="6" Description="审批通过" ParentNumber="5">
+    <Action ActionType="Judge">
+      <Condition Type="Approve">1</Condition>
+    </Action>
+  </Step>
+  <Step StepNumber="7" Description="审批不通过" ParentNumber="5">
+    <Action ActionType="Judge">
+      <Condition Type="Approve">0</Condition>
+    </Action>
+  </Step>
+
+  <!-- 结束 -->
+  <Step StepNumber="8" Description="结束" ParentNumber="6">
+    <Action ActionType="End" />
+  </Step>
+
+</Workflow>

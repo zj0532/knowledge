@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="MarketManagement" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^E:\\工作文档\\工单系统\\工单系统开发\\后台程序\\Framework\\PacteraFramework-Branch-V2\\Pactera\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^E:\\工作文档\\工单系统\\工单系统开发\\后台程序\\Framework\\PacteraFramework-Branch-V2\\Pactera\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="MSSQLServer-Web.config Connection String" description="" value="Data Source=10.10.0.17;Initial Catalog=CnqcMarketManagement;Persist Security Info=True;User ID=sa;Password=sql123!" tags="">
+    <parameterEntry kind="XmlFile" scope="E:\\工作文档\\工单系统\\工单系统开发\\后台程序\\Framework\\PacteraFramework-Branch-V2\\Pactera\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MSSQLServer']/@connectionString" />
+  </parameter>
+  <parameter name="OaUserOracle-Web.config Connection String" description="" value="Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.10.0.60)(PORT = 1521)))(CONNECT_DATA=(SERVICE_NAME=ORCL)));User ID=hrselect;Password=hrselect" tags="">
+    <parameterEntry kind="XmlFile" scope="E:\\工作文档\\工单系统\\工单系统开发\\后台程序\\Framework\\PacteraFramework-Branch-V2\\Pactera\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='OaUserOracle']/@connectionString" />
+  </parameter>
+  <parameter name="TestMode-Web.config Connection String" description="" value="0" tags="">
+    <parameterEntry kind="XmlFile" scope="E:\\工作文档\\工单系统\\工单系统开发\\后台程序\\Framework\\PacteraFramework-Branch-V2\\Pactera\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TestMode']/@connectionString" />
+  </parameter>
+</parameters>

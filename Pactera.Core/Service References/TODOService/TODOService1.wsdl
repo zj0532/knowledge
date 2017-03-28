@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intf="http://10.20.0.26:8080/services/TODOService" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://10.20.0.26:8080/services/TODOService" targetNamespace="http://10.20.0.26:8080/services/TODOService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://10.20.0.26:8080/services/TODOService">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="ArrayOf_xsd_string">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="xsd:string[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="UpdateTODOStatusAllResponse">
+    <wsdl:part name="UpdateTODOStatusAllReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="AddTODOListResponse">
+    <wsdl:part name="AddTODOListReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="mainResponse" />
+  <wsdl:message name="DeleteTODOByReqidResponse">
+    <wsdl:part name="DeleteTODOByReqidReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="mainRequest">
+    <wsdl:part name="args" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTODOStatusAllRequest">
+    <wsdl:part name="jsonString" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTODOStatusResponse">
+    <wsdl:part name="UpdateTODOStatusReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTODOByPersonResponse">
+    <wsdl:part name="DeleteTODOByPersonReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="AddToDoResponse">
+    <wsdl:part name="AddToDoReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="AddTODOListRequest">
+    <wsdl:part name="title" type="xsd:string" />
+    <wsdl:part name="url" type="xsd:string" />
+    <wsdl:part name="softName" type="xsd:string" />
+    <wsdl:part name="corpId" type="xsd:string" />
+    <wsdl:part name="corpName" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTODOByReqidRequest">
+    <wsdl:part name="jsonString" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTODOStatusRequest">
+    <wsdl:part name="jsonString" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="AddToDoRequest">
+    <wsdl:part name="jsonString" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTODOByPersonRequest">
+    <wsdl:part name="jsonString" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="TODOService">
+    <wsdl:operation name="main" parameterOrder="args">
+      <wsdl:input name="mainRequest" message="impl:mainRequest" />
+      <wsdl:output name="mainResponse" message="impl:mainResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTODOList" parameterOrder="title url softName corpId corpName">
+      <wsdl:input name="AddTODOListRequest" message="impl:AddTODOListRequest" />
+      <wsdl:output name="AddTODOListResponse" message="impl:AddTODOListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToDo" parameterOrder="jsonString">
+      <wsdl:input name="AddToDoRequest" message="impl:AddToDoRequest" />
+      <wsdl:output name="AddToDoResponse" message="impl:AddToDoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTODOStatus" parameterOrder="jsonString">
+      <wsdl:input name="UpdateTODOStatusRequest" message="impl:UpdateTODOStatusRequest" />
+      <wsdl:output name="UpdateTODOStatusResponse" message="impl:UpdateTODOStatusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTODOStatusAll" parameterOrder="jsonString">
+      <wsdl:input name="UpdateTODOStatusAllRequest" message="impl:UpdateTODOStatusAllRequest" />
+      <wsdl:output name="UpdateTODOStatusAllResponse" message="impl:UpdateTODOStatusAllResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTODOByPerson" parameterOrder="jsonString">
+      <wsdl:input name="DeleteTODOByPersonRequest" message="impl:DeleteTODOByPersonRequest" />
+      <wsdl:output name="DeleteTODOByPersonResponse" message="impl:DeleteTODOByPersonResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTODOByReqid" parameterOrder="jsonString">
+      <wsdl:input name="DeleteTODOByReqidRequest" message="impl:DeleteTODOByReqidRequest" />
+      <wsdl:output name="DeleteTODOByReqidResponse" message="impl:DeleteTODOByReqidResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TODOServiceSoapBinding" type="impl:TODOService">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="main">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="mainRequest">
+        <wsdlsoap:body use="encoded" namespace="http://WS.cnqc.software.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="mainResponse">
+        <wsdlsoap:body use="encoded" namespace="http://10.20.0.26:8080/services/TODOService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTODOList">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="AddTODOListRequest">
+        <wsdlsoap:body use="encoded" namespace="http://WS.cnqc.software.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="AddTODOListResponse">
+        <wsdlsoap:body use="encoded" namespace="http://10.20.0.26:8080/services/TODOService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToDo">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="AddToDoRequest">
+        <wsdlsoap:body use="encoded" namespace="http://WS.cnqc.software.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="AddToDoResponse">
+        <wsdlsoap:body use="encoded" namespace="http://10.20.0.26:8080/services/TODOService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTODOStatus">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="UpdateTODOStatusRequest">
+        <wsdlsoap:body use="encoded" namespace="http://WS.cnqc.software.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="UpdateTODOStatusResponse">
+        <wsdlsoap:body use="encoded" namespace="http://10.20.0.26:8080/services/TODOService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTODOStatusAll">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="UpdateTODOStatusAllRequest">
+        <wsdlsoap:body use="encoded" namespace="http://WS.cnqc.software.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="UpdateTODOStatusAllResponse">
+        <wsdlsoap:body use="encoded" namespace="http://10.20.0.26:8080/services/TODOService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTODOByPerson">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="DeleteTODOByPersonRequest">
+        <wsdlsoap:body use="encoded" namespace="http://WS.cnqc.software.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="DeleteTODOByPersonResponse">
+        <wsdlsoap:body use="encoded" namespace="http://10.20.0.26:8080/services/TODOService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTODOByReqid">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="DeleteTODOByReqidRequest">
+        <wsdlsoap:body use="encoded" namespace="http://WS.cnqc.software.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="DeleteTODOByReqidResponse">
+        <wsdlsoap:body use="encoded" namespace="http://10.20.0.26:8080/services/TODOService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TODOServiceService">
+    <wsdl:port name="TODOService" binding="impl:TODOServiceSoapBinding">
+      <wsdlsoap:address location="http://10.20.0.26:8080/services/TODOService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,143 @@
+/*gird行数据多时自动变...css*/
+.datagrid-btable .datagrid-cell {
+    /*padding:6px 4px;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+img {
+    border: 0px;
+}
+
+.toubu {
+    background: url(pactera/images/form_tab_bg.jpg) no-repeat;
+    width: 85px;
+    height: 21px;
+}
+
+.toubu p {
+    font-size: 12px;
+    padding-left: 15px;
+    height: 23px;
+    line-height: 23px;
+    color: #000;
+}
+
+.a1 {
+    width: 74px;
+    height: 29px;
+    float: left;
+    background: url(icons/chaxun.png) no-repeat;
+}
+
+.a1:hover {
+    color: #fff;
+    cursor: pointer;
+    background: url(icons/chaxuned.png) no-repeat;
+}
+
+.a2 {
+    width: 74px;
+    height: 29px;
+    float: left;
+    margin-right: -2px;
+    background: url(icons/chongzhi.png) no-repeat;
+}
+
+.a2:hover {
+    color: #fff;
+    cursor: pointer;
+    background: url(icons/chongzhied.png) no-repeat;
+}
+
+
+/*弹出框样式*/
+.wintitle {
+    color: #fff;
+    height: 38px;
+    line-height: 38px;
+    margin-left: 17px;
+    font-size: 18px;
+}
+
+.winclose {
+    float: right;
+    padding-right: 17px;
+    padding-top: 10px;
+}
+
+.winclose:hover {
+    cursor: pointer;
+}
+
+.panel_border {
+    color: #000;
+    border: 1px solid #C9DEEF;
+    border-top: 4px solid #5BB5F4;
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
+}
+
+.content-1 {
+    height: 29px;
+}
+
+.content-1 img {
+    float: left;
+    padding-left: 14px;
+    margin-top: -3px;
+}
+
+.content-1 dl dd {
+    padding-top: 0px;
+    font-weight: 600;
+    color: #50BCED;
+}
+
+.foo {
+    width: 900px;
+    height: 60px;
+    position: relative;
+}
+
+.foo1 {
+    width: 74px;
+    height: 29px;
+    position: absolute;
+    left: 620px;
+    top: 0;
+    background: url(/Scripts/jquery-easyui-1.4.1/themes/icons/tij.png) no-repeat;
+}
+
+.foo1:hover {
+    cursor: pointer;
+    background: url(/Scripts/jquery-easyui-1.4.1/themes/icons/tij1.jpg) no-repeat;
+}
+
+.foo2 {
+    width: 74px;
+    height: 29px;
+    margin-left: 715px;
+    margin-top: 14px;
+    background: url(/Scripts/jquery-easyui-1.4.1/themes/icons/zanc.png) no-repeat;
+}
+
+.foo2:hover {
+    cursor: pointer;
+    background: url(/Scripts/jquery-easyui-1.4.1/themes/icons/zanc.jpg) no-repeat;
+}
+
+.foo3 {
+    width: 74px;
+    height: 29px;
+    margin-left: 808px;
+    margin-top: -29px;
+    background: url(/Scripts/jquery-easyui-1.4.1/themes/icons/quxi.png) no-repeat;
+}
+
+.foo3:hover {
+    cursor: pointer;
+    background: url(/Scripts/jquery-easyui-1.4.1/themes/icons/quxi.jpg) no-repeat;
+}

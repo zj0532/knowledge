@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intf="http://10.10.0.251:8080/services/BidProService" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://10.10.0.251:8080/services/BidProService" targetNamespace="http://10.10.0.251:8080/services/BidProService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://10.10.0.251:8080/services/BidProService">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="ArrayOf_xsd_string">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="xsd:string[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="addBidProResponse">
+    <wsdl:part name="addBidProReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="mainResponse" />
+  <wsdl:message name="editBidProRequest">
+    <wsdl:part name="jsonString" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="delBidProResponse">
+    <wsdl:part name="delBidProReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="delBidProRequest">
+    <wsdl:part name="pk_project" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addBidProRequest">
+    <wsdl:part name="jsonString" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="mainRequest">
+    <wsdl:part name="args" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="editBidProResponse">
+    <wsdl:part name="editBidProReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="BidProService">
+    <wsdl:operation name="main" parameterOrder="args">
+      <wsdl:input name="mainRequest" message="impl:mainRequest" />
+      <wsdl:output name="mainResponse" message="impl:mainResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addBidPro" parameterOrder="jsonString">
+      <wsdl:input name="addBidProRequest" message="impl:addBidProRequest" />
+      <wsdl:output name="addBidProResponse" message="impl:addBidProResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="editBidPro" parameterOrder="jsonString">
+      <wsdl:input name="editBidProRequest" message="impl:editBidProRequest" />
+      <wsdl:output name="editBidProResponse" message="impl:editBidProResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="delBidPro" parameterOrder="pk_project">
+      <wsdl:input name="delBidProRequest" message="impl:delBidProRequest" />
+      <wsdl:output name="delBidProResponse" message="impl:delBidProResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BidProServiceSoapBinding" type="impl:BidProService">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="main">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="mainRequest">
+        <wsdlsoap:body use="encoded" namespace="http://WS.cnqc.software.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="mainResponse">
+        <wsdlsoap:body use="encoded" namespace="http://10.10.0.251:8080/services/BidProService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addBidPro">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="addBidProRequest">
+        <wsdlsoap:body use="encoded" namespace="http://WS.cnqc.software.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="addBidProResponse">
+        <wsdlsoap:body use="encoded" namespace="http://10.10.0.251:8080/services/BidProService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editBidPro">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="editBidProRequest">
+        <wsdlsoap:body use="encoded" namespace="http://WS.cnqc.software.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="editBidProResponse">
+        <wsdlsoap:body use="encoded" namespace="http://10.10.0.251:8080/services/BidProService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delBidPro">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="delBidProRequest">
+        <wsdlsoap:body use="encoded" namespace="http://WS.cnqc.software.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="delBidProResponse">
+        <wsdlsoap:body use="encoded" namespace="http://10.10.0.251:8080/services/BidProService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BidProServiceService">
+    <wsdl:port name="BidProService" binding="impl:BidProServiceSoapBinding">
+      <wsdlsoap:address location="http://10.10.0.251:8080/services/BidProService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

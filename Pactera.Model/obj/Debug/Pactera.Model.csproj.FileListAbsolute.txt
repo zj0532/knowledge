@@ -1,0 +1,13 @@
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Model\bin\Debug\Pactera.Model.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Model\bin\Debug\Pactera.Model.pdb
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Model\obj\Debug\Pactera.Model.dll
+D:\Team Foundation Online\Cnqc\PacteraFramework-Branch-V2\Pactera.Model\obj\Debug\Pactera.Model.pdb
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Model\bin\Debug\Pactera.Model.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Model\bin\Debug\Pactera.Model.pdb
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Model\obj\Debug\Pactera.Model.dll
+E:\工作文档\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Model\obj\Debug\Pactera.Model.pdb
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Model\bin\Debug\Pactera.Model.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Model\bin\Debug\Pactera.Model.pdb
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Model\obj\Debug\Pactera.Model.dll
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Model\obj\Debug\Pactera.Model.pdb
+E:\工作文档\工单系统\工单系统开发\后台程序\Framework\PacteraFramework-Branch-V2\Pactera.Model\obj\Debug\Pactera.Model.csprojResolveAssemblyReference.cache

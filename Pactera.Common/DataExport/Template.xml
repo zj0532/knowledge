@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Table Name="Cus_case" Description="工单表">
+  <Row Key="Id" Value="42">
+    <Cell Name="Caseleibie" Description="Case类别">主case</Cell>
+    <Cell Name="CaseNo" Description="Case编号">100002</Cell>
+  </Row>
+  <Row Key="Id" Value="43">
+    <Cell Name="Caseleibie" Description="Case类别">主case</Cell>
+    <Cell Name="CaseNo" Description="Case编号">100001</Cell>
+  </Row>
+</Table>

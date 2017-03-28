@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow FlowCode="OwnerSubmit" Status="0" Name="添加业主" Description="添加业主审批流程" Version="">
+
+    <!-- 开始 -->
+    <Step StepNumber="1" Description="发起" ParentNumber="0">
+        <Action ActionType="Start" />
+    </Step>
+
+    <!-- 审批 - 分公司市场部经理 -->
+    <Step StepNumber="2" Description="分公司市场部经理" ParentNumber="1">
+        <Action ActionType="Approve">
+            <Approve PersonType="Role">3</Approve>
+        </Action>
+    </Step>
+    <Step StepNumber="3" Description="审批通过" ParentNumber="2">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">1</Condition>
+        </Action>
+    </Step>
+    <Step StepNumber="4" Description="审批不通过" ParentNumber="2">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">0</Condition>
+        </Action>
+    </Step>
+
+    <!-- 审批 - 集团市场部审批 -->
+    <Step StepNumber="5" Description="集团市场部" ParentNumber="3">
+        <Action ActionType="Approve">
+            <Approve PersonType="Role">13</Approve>
+        </Action>
+    </Step>
+    <Step StepNumber="6" Description="审批通过" ParentNumber="5">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">1</Condition>
+        </Action>
+    </Step>
+    <Step StepNumber="7" Description="审批不通过" ParentNumber="5">
+        <Action ActionType="Judge">
+            <Condition Type="Approve">0</Condition>
+        </Action>
+    </Step>
+
+    <!-- 通知 -->
+    <Step StepNumber="8" Description="通知" ParentNumber="6">
+        <Action ActionType="Notification">
+            <Notification Type="Ocs" Person="2" TemplateCode="8301DC5E-32EF-4E0B-A75C-6F2AE200F744"></Notification>
+        </Action>
+    </Step>
+
+    <!-- 结束 -->
+    <Step StepNumber="9" Description="结束" ParentNumber="8">
+        <Action ActionType="End" />
+    </Step>
+
+</Workflow>

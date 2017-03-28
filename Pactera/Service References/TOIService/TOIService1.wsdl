@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intf="http://10.10.0.251:8080/services/TOIService" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://10.10.0.251:8080/services/TOIService" targetNamespace="http://10.10.0.251:8080/services/TOIService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://10.10.0.251:8080/services/TOIService">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="ArrayOf_xsd_string">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="soapenc:Array">
+            <xsd:attribute wsdl:arrayType="xsd:string[]" ref="soapenc:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="editTOIRequest">
+    <wsdl:part name="jsonString" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="delTOIRequest">
+    <wsdl:part name="jsonString" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="addTOIRequest">
+    <wsdl:part name="jsonString" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getKeyCodeRequest">
+    <wsdl:part name="EnuType" type="xsd:string" />
+    <wsdl:part name="EnuItemLabel" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="delTOIResponse">
+    <wsdl:part name="delTOIReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="mainResponse" />
+  <wsdl:message name="addTOIResponse">
+    <wsdl:part name="addTOIReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="mainRequest">
+    <wsdl:part name="args" type="impl:ArrayOf_xsd_string" />
+  </wsdl:message>
+  <wsdl:message name="editTOIResponse">
+    <wsdl:part name="editTOIReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getKeyCodeResponse">
+    <wsdl:part name="getKeyCodeReturn" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="TOIService">
+    <wsdl:operation name="main" parameterOrder="args">
+      <wsdl:input name="mainRequest" message="impl:mainRequest" />
+      <wsdl:output name="mainResponse" message="impl:mainResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="addTOI" parameterOrder="jsonString">
+      <wsdl:input name="addTOIRequest" message="impl:addTOIRequest" />
+      <wsdl:output name="addTOIResponse" message="impl:addTOIResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getKeyCode" parameterOrder="EnuType EnuItemLabel">
+      <wsdl:input name="getKeyCodeRequest" message="impl:getKeyCodeRequest" />
+      <wsdl:output name="getKeyCodeResponse" message="impl:getKeyCodeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="editTOI" parameterOrder="jsonString">
+      <wsdl:input name="editTOIRequest" message="impl:editTOIRequest" />
+      <wsdl:output name="editTOIResponse" message="impl:editTOIResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="delTOI" parameterOrder="jsonString">
+      <wsdl:input name="delTOIRequest" message="impl:delTOIRequest" />
+      <wsdl:output name="delTOIResponse" message="impl:delTOIResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TOIServiceSoapBinding" type="impl:TOIService">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="main">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="mainRequest">
+        <wsdlsoap:body use="encoded" namespace="http://WS.cnqc.software.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="mainResponse">
+        <wsdlsoap:body use="encoded" namespace="http://10.10.0.251:8080/services/TOIService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTOI">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="addTOIRequest">
+        <wsdlsoap:body use="encoded" namespace="http://WS.cnqc.software.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="addTOIResponse">
+        <wsdlsoap:body use="encoded" namespace="http://10.10.0.251:8080/services/TOIService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getKeyCode">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getKeyCodeRequest">
+        <wsdlsoap:body use="encoded" namespace="http://WS.cnqc.software.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="getKeyCodeResponse">
+        <wsdlsoap:body use="encoded" namespace="http://10.10.0.251:8080/services/TOIService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editTOI">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="editTOIRequest">
+        <wsdlsoap:body use="encoded" namespace="http://WS.cnqc.software.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="editTOIResponse">
+        <wsdlsoap:body use="encoded" namespace="http://10.10.0.251:8080/services/TOIService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delTOI">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="delTOIRequest">
+        <wsdlsoap:body use="encoded" namespace="http://WS.cnqc.software.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="delTOIResponse">
+        <wsdlsoap:body use="encoded" namespace="http://10.10.0.251:8080/services/TOIService" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TOIServiceService">
+    <wsdl:port name="TOIService" binding="impl:TOIServiceSoapBinding">
+      <wsdlsoap:address location="http://10.10.0.251:8080/services/TOIService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
